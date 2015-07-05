@@ -119,6 +119,7 @@ consider using:
 
 + the [RESTClient](https://addons.mozilla.org/nl/firefox/addon/restclient/) plugin for Firefox
 + the [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm) plugin for Chrome
++ the [Cocoa REST Client](http://mmattozzi.github.io/cocoa-rest-client/) if you are on a Mac
 
 > **Note:** for brevity we will only test JSON responses.
 
