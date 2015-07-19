@@ -12,7 +12,7 @@ In this follow-up post to
 [How to use a CakePHP 3 REST API](/2015/04/how-to-use-a-cakephp-3-rest-api/)
 we will implement a
 [Prefix Route](http://book.cakephp.org/3.0/en/development/routing.html#prefix-routing)
-so we can benefit of clean controller logic separation and limit access
+so we can benefit from clean controller logic separation and limit access
 to our API resources through (only) ``/api`` prefixed URLs.
 
 ## Before We Begin
