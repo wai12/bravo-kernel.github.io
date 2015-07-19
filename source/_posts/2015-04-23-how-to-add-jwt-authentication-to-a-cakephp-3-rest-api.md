@@ -23,7 +23,7 @@ instructions:
 - usable as drop-in code for (almost) any CakePHP 3 application requiring API authentication
 - spiced up with background information to help you understand the JWT concept
 
-> **Important**: please remember to use SSL/TLS encrypted connections for ALL API traffic 
+> **Important**: please remember to use SSL/TLS encrypted connections for ALL API traffic
 > to prevent man in the middle attackers from seeing and stealing the tokens.
 
 During this tutorial you will:
@@ -60,9 +60,9 @@ composer installing and running the database migration
 
 The web is already filled with information about JSON Web Token (JWT) Authentication so we will not
 duplicate it here but in a nutshell it allows authenticating users against a single token instead
-of the more commonly used username/password. 
+of the more commonly used username/password.
 
-As a side effect our API will benefit from some (very cool) additional JWT functionality like:	
+As a side effect our API will benefit from some (very cool) additional JWT functionality like:
 
 + No more need for sessions
 + No more need to protect our API against Cross-Site Request Forgery (CSRF)
@@ -97,9 +97,11 @@ bin/cake bake all Users
 CakePHP 3 comes with a convenient [PasswordHasher](http://book.cakephp.org/3.0/en/controllers/components/authentication.html#hashing-passwords)
 that will automatically encrypt user passwords using the very strong
 [bcrypt](http://en.wikipedia.org/wiki/Bcrypt) hashing algorithm.
-To enable password hashing for your application add the following method to ``src/Model/Entity/User.php``:
+To enable password hashing for your application make sure to add both the class and the method shown below to ``src/Model/Entity/User.php``:
 
 ```php
+use Cake\Auth\DefaultPasswordHasher;
+
     protected function _setPassword($password)
     {
         return (new DefaultPasswordHasher)->hash($password);
@@ -159,9 +161,9 @@ Router::prefix('api', function ($routes) {
 
 ## 5. Enabling JWT Authentication
 
-To enable JWT Authentication for all API resources extend the 
-``src/Controller/Api/AppController.php`` file created during the previous tutorial with the following 
-``beforeFilter`` method so the file looks similar to:
+To enable JWT Authentication for all API resources extend the
+``src/Controller/Api/AppController.php`` file created during the previous tutorial with the following
+``initialize`` method so the file looks similar to:
 
 ```php
 <?php
@@ -193,7 +195,7 @@ class AppController extends Controller
         ]
     ];
 
-    public function beforeFilter(Event $event)
+    public function initialize()
     {
         $this->loadComponent('Auth', [
             'authenticate' => [
@@ -217,7 +219,7 @@ posted (non-JWT) JSON credentials during the ``/token`` action.
 
 ### Verify Authentication Is Enabled
 
-To verify your API resources now actually require authentication query 
+To verify your API resources now actually require authentication query
 ``http://cake3api.app/api/cocktails.json``.
 
 Should return Status Code 401 (Unauthorized) with a JSON response body similar to:
@@ -400,7 +402,7 @@ To implement token requests add the following ``token()`` method to ``src/Contro
 
 ### Verify Token Request
 
-To verify your setup request a token for the newly created user by posting JSON data to your API using:
+To verify your setup try requesting a token for the newly created user by posting JSON data to your API using:
 
 + URL ``http://cake3api.app/api/users/token``
 + **HTTP Method** ``POST``
@@ -426,7 +428,7 @@ only the JWT token similar to:
 
 ### How it works
 
-When accessing an API resource that requires authentication the JWT Plugin will look for a token 
+When accessing an API resource that requires authentication the JWT Plugin will look for a token
 in the ``Authorization`` header and will validate it using the ``Salt`` value used by your application.
 
 If validation is successful a JSON 200 response (Success) will be returned with application produced body.
@@ -484,7 +486,7 @@ Should return Status Code 200 (Success) with the familiar JSON cocktails respons
 
 ### Verify Unauthenticated Access
 
-To verify unsuccessful authentication is processed as expected retrieve the list of protected cocktails 
+To verify unsuccessful authentication is processed as expected retrieve the list of protected cocktails
 by using the exact same query but **this time removing** the ``Authorization`` header.
 
 Should instantly return Status Code 401 (Unauthorized) with a JSON response body similar to:
