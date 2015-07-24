@@ -208,8 +208,20 @@ plugin om in te stellen dat iedere speler bij het inloggen (joinen)
 in een bepaalde Multiverse wereld terecht komt. Bijvoorbeeld handig als je wilt
 dat iedereen na het inloggen in je hub wereld terecht komt.
 
+### Spawn instellen voor een wereld
 
-Stel eerst de naam van de wereld in die je als standaard wereld witl gebruiken.
+Om de spawn in te stellen voor een wereld **ga je eerst naar die wereld**. Zoek daarna een mooi
+plekje om te spawnen en voer het volgende command uit:
+
+```bash
+/setspawn
+```
+
+### Standaard spawn instellen voor je server
+
+Volg deze stappen om iedere speler die je server bezoekt via dezelfde spawn binnen te laten komen.
+
+Stel eerst de naam van de wereld in die je als standaard wereld wilt gebruiken.
 Open hiervoor ``core.yml`` en pas de ``defaultWorld`` aan. Hieronder zie je
 een voorbeeld waarbij de wereld ``hub`` als standaard wereld wordt gebruikt.
 
