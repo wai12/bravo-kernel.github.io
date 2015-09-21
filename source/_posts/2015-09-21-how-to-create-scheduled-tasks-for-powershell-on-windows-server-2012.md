@@ -6,7 +6,7 @@ tags:
 - microsoft
 - server-2012
 ---
-Instructions on how to set up properly configured Scheduled Tasks for Powershell
+Instructions for properly configuring Scheduled Tasks for Powershell
 scripts on Windows Server 2012.
 
 ## Creating the service account
