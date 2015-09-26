@@ -57,6 +57,8 @@ Create a new action:
 - select ``Start a program``
 - set the ``Program/script`` field to (just) ``Powershell``
 - set the ``Arguments`` field to ``-noprofile -executionpolicy bypass -file "c:\your-script.ps1"``
+- even though this is optional it would be wise to fill the ``Start in (optional)``
+field with the full path of the directory your script is located in
 
 > **Note:** do NOT use the ``-noexit`` argument as this will keep your task running
 > indefinitely, preventing it to reach ``Ready`` state after completion.
@@ -75,4 +77,4 @@ On saving the task it will:
 
 - start immediately (status ``Running``)
 - change to status ``Queued`` after it has completed
-- will be executed executed again every other 30 minutes
+- will be executed again every other 30 minutes
