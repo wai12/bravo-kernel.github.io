@@ -34,4 +34,4 @@ Remove Office 2016 Add-ins to drastically improve startup times, applies to:
 
 6. Press `OK`
 
-7. Now restart your Office 2016 product to enjoy lightning fast startups
+7. Now restart your Office 2016 product and enjoy lightning fast startups
