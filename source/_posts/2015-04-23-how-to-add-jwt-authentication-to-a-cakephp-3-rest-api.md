@@ -206,6 +206,7 @@ class AppController extends Controller
     public function initialize()
     {
         $this->loadComponent('Auth', [
+            'storage' => 'Memory',
             'authenticate' => [
                 'Form',
                 'ADmad/JwtAuth.Jwt' => [
@@ -222,8 +223,12 @@ class AppController extends Controller
 }
 ```
 
-**Note:** FormAuthenticate MUST be included here or AuthComponent will not be able to validate the
-posted (non-JWT) JSON credentials during the ``/token`` action.
+**Notes:**
+- uses `Memory` non-persistent storage for the authenticated user
+(instead of Cake's session based default)
+- FormAuthenticate MUST be included here or AuthComponent will not be able to validate the
+posted (non-JWT) JSON credentials during the ``/token`` action
+
 
 ### Verify Authentication Is Enabled
 
