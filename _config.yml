@@ -39,7 +39,7 @@ highlight:
   line_number: true
   tab_replace:
 
-# Settings for markdown renderer 
+# Settings for markdown renderer
 # https://github.com/hexojs/hexo-renderer-marked
 marked:
   gfm: true
@@ -48,8 +48,8 @@ marked:
   tables: true
   breaks: false
   smartLists: true
-  smartypants: true  
-  
+  smartypants: true
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -68,7 +68,6 @@ tag: 2
 ## You can customize the logger format as defined in
 ## http://www.senchalabs.org/connect/logger.html
 port: 4000
-server_ip: 10.25.83.66
 logger: false
 logger_format: dev
 
@@ -100,10 +99,7 @@ feed:
   type: atom
   path: atom.xml
   limit: 20
-  
+
 # Plugin: exclude generator
 exclude_generator:
 - index
-
-
-
