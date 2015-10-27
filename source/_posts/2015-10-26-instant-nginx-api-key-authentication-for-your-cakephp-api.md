@@ -16,7 +16,7 @@ nothing more than a simple Nginx configuration file:
 - no code, no overhead
 - manual API key revocation
 - manual API key updating
-- json responses consistent with the [FriendsOfCake API Listener](http://crud.readthedocs.org/en/latest/listeners/api.html#id1)
+- json response consistent with the [FriendsOfCake API Listener](http://crud.readthedocs.org/en/latest/listeners/api.html#id1)
 
 ## 1. Creating the nginx conf file
 
@@ -39,8 +39,8 @@ return 403 '{"success": false, "data":{"message":"Invalid API Key", "url": "$req
 
 The above will:
 - will check all connections for the presence of an `apikey` header
-- if an apikey is found with a matching value no further action is taken
-- if no match was made a 403 is thrown with json response body identical to
+- do nothing if a matching apikey is found
+- will otherwise throw a 403 with json response body identical to
 the [FoC API Listener](http://crud.readthedocs.org/en/latest/listeners/api.html#id1)
 
 > Don't use underscores in your custom header (key) names [as nginx
