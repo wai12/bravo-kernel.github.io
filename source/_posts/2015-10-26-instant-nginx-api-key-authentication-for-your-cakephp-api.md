@@ -12,29 +12,35 @@ Instantly add rock solid API key authentication for your CakePHP
 ([CRUD](https://github.com/FriendsOfCake/crud)) API using
 nothing more than a simple Nginx configuration file:
 
-- no need for 3rd party gateways
+- protect your API before even coding
 - no code, no overhead
-- manual API key revocation
-- manual API key updating
 - json response consistent with the [FriendsOfCake API Listener](http://crud.readthedocs.org/en/latest/listeners/api.html#id1)
+- manual API key updating and revocation
+- replace with a "proper" solution when you're ready
 
 ## 1. Creating the nginx conf file
 
 Create new file `/etc/nginx/api_keys.conf` with the following content:
 
 ```bash
+# define boolean
+set $valid 0;
+
 # bravo-kernel's key
 if ($http_apikey = 'abcdefg123456') {
-    break;
+    set $valid 1;
 }
 
 # mikey's key
 if ($http_apikey = '1234567890') {
-    break;
+    set $valid 1;
 }
 
-default_type application/json;
-return 403 '{"success": false, "data":{"message":"Invalid API Key", "url": "$request_uri", "code":403}}';
+# throw 403 if no key match was made
+if ($valid = 0) {
+    add_header 'Content-Type' 'application/json;charset=UTF-8' always;
+    return 403 '{"success": false, "data":{"message":"Invalid API Key", "url": "$request_uri", "code":403}}';
+}
 ```
 
 The above will:
@@ -83,8 +89,10 @@ To enable API key protection for your virtual host:
 
 2. Try to access one of your API resources
 
-3. You should see a json error response (403) similar to the one below proving
-your API resources can no longer be accessed without a valid API key:
+3. You should see a json (403) error response similar to the one below proving:
+
+    - your API resources are no longer accessible without a valid API key
+    - Nginx is serving json similar to the CRUD plugin
 
     ```
     {
