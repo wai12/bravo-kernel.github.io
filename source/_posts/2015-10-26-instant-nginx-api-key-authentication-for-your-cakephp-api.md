@@ -58,7 +58,7 @@ To enable API key protection for your virtual host:
 
 1. Open your nginx vhost file
 
-2. To protect all files (php, html, etc) add the following line directly below the `/` location
+2. Add the following line directly below the `~ \.php` location
 
     ```
     include /etc/nginx/api_keys.conf;
@@ -67,11 +67,19 @@ To enable API key protection for your virtual host:
     So your configuration will look similar to:
 
     ```nginx
-    location / {
-        include /etc/nginx/api_keys.conf;        
-        try_files $uri \$uri /index.php?$args;
-    }
+        location ~ \.php$ {
+            include /etc/nginx/api_keys.conf;
+            try_files $uri =404;
+            include /etc/nginx/fastcgi_params;
+            fastcgi_pass    unix:/var/run/php5-fpm.sock;
+            fastcgi_index   index.php;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+         }
     ```
+
+    > Please note that will ONLY protect your php served files. To protect
+    > e.g. static html folders simply include the `api_keys.conf` in those
+    > locations as well. 
 
 4. Restart nginx to effectuate the changes:
 
