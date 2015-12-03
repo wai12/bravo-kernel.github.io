@@ -13,8 +13,7 @@ To make Composer (globally) available on Debian:
 
 	$ cd /usr/src
 	$ sudo apt-get install curl php5-cli
-	$ curl -sS https://getcomposer.org/installer | sudo php
-	$ sudo mv composer.phar /usr/bin/composer
+	$ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 Verify installation:
 
