@@ -11,10 +11,11 @@ tags:
 - security
 - jwt
 ---
-
 In this follow-up post to
 [How to prefix route a CakePHP 3 REST API](/2015/04/how-to-prefix-route-a-cakephp-3-rest-api/)
 we will implement [JSON Web Token](http://jwt.io/) (JWT) authentication.
+
+> Tutorial updated for v2.0 of the cakephp-jwt-auth plugin
 
 To prevent (yet another) partial/pointless JWT tutorial we will provide you with step-by-step
 instructions:
@@ -134,7 +135,7 @@ Run the following command inside your application's root directory to
 composer install the [JwtAuth plugin](https://github.com/ADmad/cakephp-jwt-auth):
 
 ```bash
-composer require admad/cakephp-jwt-auth:1.0.x-dev
+composer require admad/cakephp-jwt-auth:2.0.x-dev
 ```
 
 Now run the following command to make your application use the plugin:
@@ -185,9 +186,12 @@ class AppController extends Controller
 
     use \Crud\Controller\ControllerTrait;
 
-    public $components = [
-        'RequestHandler',
-        'Crud.Crud' => [
+    public function initialize()
+    {
+        parent::initialize();
+
+        $this->loadComponent('RequestHandler');
+        $this->loadComponent('Crud.Crud', [
             'actions' => [
                 'Crud.Index',
                 'Crud.View',
@@ -200,35 +204,40 @@ class AppController extends Controller
                 'Crud.ApiPagination',
                 'Crud.ApiQueryLog'
             ]
-        ]
-    ];
-
-    public function initialize()
-    {
+        ]);
         $this->loadComponent('Auth', [
             'storage' => 'Memory',
             'authenticate' => [
-                'Form',
+                'Form' => [
+                    'scope' => ['Users.active' => 1]
+                ],
                 'ADmad/JwtAuth.Jwt' => [
-                    'parameter' => '_token',
+                    'parameter' => 'token',
                     'userModel' => 'Users',
                     'scope' => ['Users.active' => 1],
                     'fields' => [
-                        'id' => 'id'
-                    ]
+                        'username' => 'id'
+                    ],
+                    'queryDatasource' => true
                 ]
-            ]
+            ],
+            'unauthorizedRedirect' => false,
+            'checkAuthIn' => 'Controller.initialize'
         ]);
     }
 }
 ```
 
 **Notes:**
-- uses `Memory` non-persistent storage for the authenticated user
+
+- we use `Memory` based non-persistent storage for the authenticated user
 (instead of Cake's session based default)
 - FormAuthenticate MUST be included here or AuthComponent will not be able to validate the
 posted (non-JWT) JSON credentials during the ``/token`` action
-
+- by enabling `queryDataSource` the `sub` field in the JWT token will be used
+to query the database for user information (using the User model)
+- `checkAuthIn` makes user information available in all Controller
+`beforeFilter()` functions
 
 ### Verify Authentication Is Enabled
 
@@ -262,20 +271,23 @@ Create new file ``src/Controller/Api/UsersController`` with the following code:
 <?php
 namespace App\Controller\Api;
 
-use App\Controller\Api\AppController;
 use Cake\Event\Event;
 use Cake\Network\Exception\UnauthorizedException;
 use Cake\Utility\Security;
+use Firebase\JWT\JWT;
 
 class UsersController extends AppController
 {
-    public function beforeFilter(Event $event)
+    public function initialize()
     {
-        parent::beforeFilter($event);
+        parent::initialize();
         $this->Auth->allow(['add', 'token']);
     }
 }
 ```
+
+**Note:** Auth-allowed actions MUST be set inside `initialize()`
+because we enabled the `checkAuthIn` configuration option.
 
 ## 7. Implementing API User Registration
 
@@ -308,13 +320,13 @@ To implement user registration add the following ``add()`` method to ``src/Contr
 ```php
     public function add()
     {
-        $this->Crud->on('afterSave', function(\Cake\Event\Event $event) {
+        $this->Crud->on('afterSave', function(Event $event) {
             if ($event->subject->created) {
                 $this->set('data', [
                     'id' => $event->subject->entity->id,
-                    'token' => $token = \JWT::encode(
+                    'token' => JWT::encode(
                         [
-                            'id' => $event->subject->entity->id,
+                            'sub' => $event->subject->entity->id,
                             'exp' =>  time() + 604800
                         ],
                     Security::salt())
@@ -329,6 +341,12 @@ To implement user registration add the following ``add()`` method to ``src/Contr
 **Note:** even though this is not required we are adding the [JWT exp claim](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html#expDef)
 to the token payload so the token will expire after one week, effectively forcing the user to request
 a new unique token using the ``/token`` action.
+
+**Important:** your JWT token (and thus the user information) will NOT
+contain an `id` field if you choose to  disable the `queryDataSource` option.
+This might might break code depending on the presence of an `id` field but
+is easily solved  by manually adding the `id` field to the JWT token
+(below `exp` in the code above).
 
 ### Verify User Registration
 
@@ -402,8 +420,8 @@ To implement token requests add the following ``token()`` method to ``src/Contro
         $this->set([
             'success' => true,
             'data' => [
-                'token' => $token = \JWT::encode([
-                    'id' => $user['id'],
+                'token' => JWT::encode([
+                    'sub' => $user['id'],
                     'exp' =>  time() + 604800
                 ],
                 Security::salt())
