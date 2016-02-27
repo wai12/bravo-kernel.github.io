@@ -135,7 +135,7 @@ Run the following command inside your application's root directory to
 composer install the [JwtAuth plugin](https://github.com/ADmad/cakephp-jwt-auth):
 
 ```bash
-composer require admad/cakephp-jwt-auth:2.0.x-dev
+composer require admad/cakephp-jwt-auth
 ```
 
 Now run the following command to make your application use the plugin:
