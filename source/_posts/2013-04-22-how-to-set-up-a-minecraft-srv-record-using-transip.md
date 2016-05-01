@@ -9,7 +9,8 @@ tags:
 - dns
 ---
 
-Create the following records to connect to a hosted Minecraft server using **minecraft.bravo-kernel.com** instead of 86.95.212.98:27032
+Create the following DNS records to allow connections to a hosted Minecraft
+server using **play.bravo-kernel.com** instead of 86.95.212.98:27032
 
-    mc                           1day    A      86.95.212.98
-    _minecraft._tcp.minecraft    1day    SRV    0 5 27032 mc.bravo-kernel.com.
+    play                    1day    A      86.95.212.98
+    _minecraft._tcp.play    1day    SRV    0 5 27032 play.bravo-kernel.com.
