@@ -8,9 +8,14 @@ tags:
 - rest
 - api
 ---
+
 In this follow-up post to
 [How to build a CakePHP 3 REST API in minutes](/2015/04/how-to-build-a-cakephp-3-rest-api-in-minutes/)
-we explore the inner workings of our new API by:
+we  explore the inner workings of our new API.
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/197398a609a6d233a8c2)
+
+We will address the most common use cases by:
 
 1. Adding some tasty cocktail data to our application
 (already listening at ``http://cake3api.app``)
@@ -22,6 +27,7 @@ we explore the inner workings of our new API by:
 	+ delete action (DELETE)
 3. Configuring Pagination
 4. Testing Querystring Parameters
+
 
 ## Before We Begin
 
@@ -387,7 +393,7 @@ removed ``description`` from the sortWhitelist array.
 ## Additional reading
 
 + Follow-up tutorial "[How to prefix route a CakePHP3 REST API](/2015/04/how-to-prefix-route-a-cakephp-3-rest-api/)"
-+ [End-state application sources](https://github.com/bravo-kernel/application-examples/tree/master/blog-how-to-use-a-cakephp3-rest-api)  for this tutorial
++ [Git repository](https://github.com/bravo-kernel/application-examples/tree/master/blog-how-to-use-a-cakephp3-rest-api) with working end state application produced by this tutorial
 + [CakePHP pagination documentation](http://book.cakephp.org/3.0/en/controllers/components/pagination.html)
 + The [CakePHP 3 Book](http://book.cakephp.org/3.0/en/index.html) and [CakePHP 3 API](http://api.cakephp.org/3.0/) documentation
 

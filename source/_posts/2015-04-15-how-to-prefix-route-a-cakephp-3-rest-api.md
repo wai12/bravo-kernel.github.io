@@ -15,6 +15,8 @@ we will implement a
 so we can benefit from clean controller logic separation and limit access
 to our API resources through (only) ``/api`` prefixed URLs.
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/197398a609a6d233a8c2)
+
 ## Before We Begin
 
 This is part three of the CakePHP 3 REST API tutorial series:
@@ -159,8 +161,7 @@ class AppController extends Controller {
                 'Crud.Edit',
                 'Crud.Delete'
             ]
-        ],
-        'Flash'
+        ]
     ];
 }
 ```
@@ -237,7 +238,7 @@ CakePHP index page:
 ## Additional reading
 
 + Follow-up tutorial [How to add JWT Authentication to a CakePHP 3 REST API](/2015/04/how-to-add-jwt-authentication-to-a-cakephp-3-rest-api/)
-+ [End-state application sources](https://github.com/bravo-kernel/application-examples/tree/master/blog-how-to-prefix-route-a-cakephp3-rest-api) for this tutorial
++ [Git repository](https://github.com/bravo-kernel/application-examples/tree/master/blog-how-to-prefix-route-a-cakephp3-rest-api) with working end state application produced by this tutorial
 + [CakePHP routing documentation](http://book.cakephp.org/3.0/en/development/routing.html)
 + The [CakePHP 3 Book](http://book.cakephp.org/3.0/en/index.html) and [CakePHP 3 API](http://api.cakephp.org/3.0/) documentation
 
