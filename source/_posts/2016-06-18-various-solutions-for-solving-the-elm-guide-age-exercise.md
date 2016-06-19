@@ -36,7 +36,7 @@ into the [online Elm Try editor](http://elm-lang.org/try).
 
 ## Solution 1.
 
-Mimicing earlier instructions in the Guide this is probably the first solution
+Mimicking earlier instructions in the Guide this is probably the first solution
 users will come up with:
 
 - adding a new record field `age` with type `Int` to the Model
@@ -144,8 +144,8 @@ viewValidation model =
     div [ style [("color", color)] ] [ text message ]
 ```
 
-Copy-paste this code into the online editor, fill in a name and you will see
-the `age` field behaving as expected. Not bad for a first time Elm user, get
+Copy-paste the above code into the online editor and you will see an `age`
+field that should behave as expected. Not bad for a first time Elm user, get
 some coffee.
 
 ## Solution 2
@@ -481,8 +481,7 @@ viewValidation model =
 inputStringToInt : String -> Maybe Int
 
 inputStringToInt input =
-  let result = String.toInt input
-  in case result of
+  case String.toInt input of
     Err _ -> Nothing
     Ok converted -> Just converted
 ```
@@ -499,7 +498,7 @@ with the next chapter of the Guide.
 
 Another thing to note is that "there is more than one way to do it" and thus
 the provided solutions are non-exhaustive and most likely a lot of different
-approaches are possible and they may all be valid and or even better.
+approaches are possible and they may all be valid or even better.
 
 For example, the following feedback was provided on Slack:
 
@@ -514,7 +513,7 @@ case condition of
   False -> y
 ```
 
-Which is more readable, and abstracts away the pattern
+Whiere the first is more readable, and abstracts away the pattern
 matching. I would always prefer using abstraction instead of direct pattern
 matching in general, because that means if the implementations of the type
 changes in the future (unlikely for Bool types) you won’t have to update every
