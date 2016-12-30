@@ -14,7 +14,7 @@ nothing more than a simple Nginx configuration file:
 
 - protect your API before even coding
 - no code, no overhead
-- json response consistent with the [FriendsOfCake API Listener](http://crud.readthedocs.org/en/latest/listeners/api.html#id1)
+- json error response consistent with the [FriendsOfCake API Listener](http://crud.readthedocs.org/en/latest/listeners/api.html#id1) or JSONAPI
 - manual API key updating and revocation
 - replace with a "proper" solution when you're ready
 
@@ -36,21 +36,36 @@ if ($http_apikey = '1234567890') {
     set $valid 1;
 }
 
-# throw 403 if no key match was made
+# throw 403 with CakePHP Crud compatible JSON error response if no key match was made
 if ($valid = 0) {
     add_header 'Content-Type' 'application/json;charset=UTF-8' always;
     return 403 '{"success": false, "data":{"message":"Invalid API Key", "url": "$request_uri", "code":403}}';
 }
 ```
 
-The above will:
-- will check all connections for the presence of an `apikey` header
-- do nothing if a matching apikey is found
-- will otherwise throw a 403 with json response body identical to
-the [FoC API Listener](http://crud.readthedocs.org/en/latest/listeners/api.html#id1)
+If you prefer JSONAPI simply replace the `$valid` condition above with:
 
-> Don't use underscores in your custom header (key) names [as nginx
+```bash
+ # Throw 403 with JSONAPI error response if no key match was made
+if ($valid = 0) {
+	add_header 'Content-Type' 'application/vnd.api+json;charset=UTF-8' always;
+	add_header 'Access-Control-Allow-Origin' '*' always;
+	return 403 '{"errors": [{ "status": "403", "source": { "pointer": "$request_uri" }, "title":  "Forbidden", "detail": "Invalid API key" }]}';
+}
+```
+
+The above:
+- will check all connections for the presence of an `apikey` header
+- will do nothing if a matching apikey is found, otherwise:
+	- throws a 403 error
+	- produces a JSON  error response body in either JSONAPI or 
+	[FoC API Listener](http://crud.readthedocs.org/en/latest/listeners/api.html#id1)
+	compatible format
+
+> Do NOT use underscores in your custom header (key) names [as nginx
 > will remove them by default](http://stackoverflow.com/questions/22856136/why-underscores-are-forbidden-in-http-header-names).
+
+
 
 ## 2. Enabling API key protection
 
