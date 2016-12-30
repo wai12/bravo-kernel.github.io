@@ -457,6 +457,12 @@ only the JWT token similar to:
 
 ## 10. Testing JWT Authentication
 
+> ** Before you begin testing:** please be aware that some servers (like Apache) don't automatically 
+> populate $_SERVER['HTTP_AUTHORIZATION'] even when the Authorization header is set. Make sure to 
+> first follow [these instructions](https://github.com/ADmad/cakephp-jwt-auth#working)
+> if the tests below are not functioning as described.
+
+
 ### How it works
 
 When accessing an API resource that requires authentication the JWT Plugin will look for a token
