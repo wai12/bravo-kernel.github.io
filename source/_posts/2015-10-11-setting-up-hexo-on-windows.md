@@ -31,6 +31,14 @@ inside the Git Bash:
     npm -v
     ```
 
+## Re-installing hexo
+
+For those re-installing Hexo and using an existing hexo blog repository:
+
+- do NOT create the directory described step 1 but checkout your blog repo instead
+- cd into your repo directory and git checkout the `source` branch
+- then simply follow the exact same steps (starting from 2) but SKIP the ``hexo init`` command
+
 ## Installing hexo
 
 Please note that all commands are to be executed within the Git Bash.
@@ -61,14 +69,6 @@ Please note that all commands are to be executed within the Git Bash.
 5. You're good to go, next steps would be:
     - customizing `_config.yml` to your likings
     - creating your first post by running ``hexo new``
-
-## Re-installing hexo
-
-If you are re-installing an existing blog:
-
-- do not create a new directory but checkout your blog repo
-- git checkout the `source` branch
-- follow the exact same steps but make sure to NOT run the ``hexo init`` command
 
 ## Deploying
 
