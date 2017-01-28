@@ -4,7 +4,7 @@ tags:
   - ember
 categories:
   - Debian
-date: 2017-11-22 12:54:38
+date: 2016-11-22 12:54:38
 ---
 
 To globally install Watchman on Debian:
