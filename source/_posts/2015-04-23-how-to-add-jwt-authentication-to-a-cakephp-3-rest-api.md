@@ -1,6 +1,5 @@
 title: "How to add JWT Authentication to a CakePHP 3 REST API"
 date: 2015-04-20 07:22:32
-tags:
 categories:
   - CakePHP
 tags:
