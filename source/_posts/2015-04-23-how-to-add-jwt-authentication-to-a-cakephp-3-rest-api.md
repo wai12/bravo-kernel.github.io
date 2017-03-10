@@ -55,6 +55,7 @@ This is part four of the CakePHP 3 REST API tutorial series:
 2. [How to use a CakePHP 3 REST API](/2015/04/how-to-use-a-cakephp-3-rest-api/)
 3. [How to prefix route a CakePHP 3 REST API](/2015/04/how-to-prefix-route-a-cakephp-3-rest-api/)
 4. How to add JWT Authentication to a CakePHP 3 REST API
+5. [How to make your CakePHP 3 API produce JSON API](/2017/03/how-to-make-your-cakephp-3-api-produce-jsonapi/)
 
 Before starting this tutorial either:
 
@@ -540,7 +541,8 @@ Should instantly return Status Code 401 (Unauthorized) with a JSON response body
 
 ## Additional reading
 
-+ [EndGit repository](https://github.com/bravo-kernel/application-examples/tree/master/blog-how-to-add-jwt-authentication-to-a-cakephp-3-rest-api) with working end state application produced by this tutorial
++ Follow-up tutorial [How to make your CakePHP 3 API produce JSON API](/2017/03/how-to-make-your-cakephp-3-api-produce-jsonapi/)
++ [Git repository](https://github.com/bravo-kernel/application-examples/tree/master/blog-how-to-add-jwt-authentication-to-a-cakephp-3-rest-api) with working end state application as produced by this tutorial
 + The [CakePHP JWT Plugin](https://github.com/ADmad/cakephp-jwt-auth) on Github
 + The [PHP JWT Library](https://github.com/firebase/php-jwt) on Github
 + The [CakePHP 3 Book](http://book.cakephp.org/3.0/en/index.html) and [CakePHP 3 API](http://api.cakephp.org/3.0/) documentation
