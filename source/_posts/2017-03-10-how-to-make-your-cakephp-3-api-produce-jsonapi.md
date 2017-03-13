@@ -29,6 +29,7 @@ This is part five of the CakePHP 3 REST API tutorial series:
 3. [How to prefix route a CakePHP 3 REST API](/2015/04/how-to-prefix-route-a-cakephp-3-rest-api/)
 4. [How to add JWT Authentication to a CakePHP 3 REST API](/2015/04/how-to-add-jwt-authentication-to-a-cakephp-3-rest-api/)
 5. How to make your CakePHP 3 API produce JSON API
+6. [How to use a CakePHP API as the data backend for Ember in 30 minutes](/2017-03-how-to-use-a-cakeph-3-api-as-the-data-backend-for-ember-in-30-minutes.md/)
 
 Before starting this tutorial either:
 
@@ -169,7 +170,34 @@ JSON API format looking similar to:
 
 > See the Postman collection (top of page) for examples of `index`, `add`, `edit` and `delete`.
 
-## 5. Make it better
+## 5. Enabling CORS middleware
+
+Your API will be pretty useless if people (from other domains) won't be able to use it
+so let's enable it right now along with CakePHP's
+[new middleware functionality](https://book.cakephp.org/3.0/en/controllers/middleware.html)
+by following the book's [step-by-step instructions](https://book.cakephp.org/3.0/en/controllers/middleware.html#adding-the-new-http-stack-to-an-existing-application)
+:
+
+1. update `webroot/index.php`
+2. create `src/Application.php` by copying from the cakephp-app repo
+
+Now that our application is capable of handling middleware let's add the
+[cakephp-cors middleware plugin](https://github.com/ozee31/cakephp-cors) by running:
+
+```bash
+composer require ozee31/cakephp-cors
+```
+
+Enable the plugin by adding this to `config/bootstrap.php`:
+
+```php
+Plugin::load('Cors', ['bootstrap' => true, 'routes' => false]);
+```
+
+Please note that the plugin will allow CORS for all origins, all methods and all headers by default
+which is a very good thing as we will start using CORS pretty heavily in the next tutorial.
+
+## 6. Make it better
 
 Even though the JsonApiListener is already quite feature-complete, some parts of the JSON API specification 
 (like [Sparse Fieldsets](http://jsonapi.org/format/#fetching-sparse-fieldsets) and query parameters) have
