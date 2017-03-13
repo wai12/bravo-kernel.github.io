@@ -97,9 +97,9 @@ using Ubuntu 14.04) as nothing more than an example:
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get update
 sudo apt-get install nodejs
-sudo npm install -g ember-cli
-sudo npm install -g phantomjs
-sudo npm install -g bower
+npm install -g ember-cli
+npm install -g phantomjs
+npm install -g bower
 ```
 
 ## 3. Creating the Ember application
@@ -211,9 +211,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    let promise = this.store.findAll('cocktail');
-    return promise;
-  },  
+    return this.store.findAll('cocktail');
+  },
 });
 ```
 
