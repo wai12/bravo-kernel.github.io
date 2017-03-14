@@ -2,6 +2,7 @@ title: How to use a CakePHP API as the data backend for Ember in 30 minutes
 date: 2017-03-13 18:00:00
 tags:
   - cakephp
+  - emberjs
   - ember
   - api
   - jsonapi
@@ -333,8 +334,6 @@ to let users interact with data so let's add one
 that will automatically construct and send the correct `DELETE` request
 to our API.
 
-
-
 Moment, since all template actions require a corresponding (named) event in the routes file
 first open `app/routes/cocktails.js` and update it to look like this:
 
@@ -585,6 +584,9 @@ you out if you encounter any problems so make sure to join:
 [#cakephp IRC channel](https://kiwiirc.com/client/irc.freenode.net#cakephp)
 - the [Ember Slack group](https://embercommunity.slack.com/) or their [#emberjs IRC channel](https://kiwiirc.com/client/irc.freenode.net#emberjs)
 
-Happy coding.
+## Additional reading
+
+- [Ember.js - Guides and Tutorials](https://guides.emberjs.com/)
+- [Why I prefer Ember.js over Angular & React.js](http://voidcanvas.com/prefer-ember-js-angular-react-js/)
 
 *Eternal hat-tip to [Phally](https://github.com/Phally) for inspiring (and actually prototyping) this many years ago.*
