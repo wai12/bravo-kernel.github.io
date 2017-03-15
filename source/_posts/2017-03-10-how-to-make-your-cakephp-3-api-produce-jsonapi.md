@@ -29,7 +29,7 @@ This is part five of the CakePHP 3 REST API tutorial series:
 3. [How to prefix route a CakePHP 3 REST API](/2015/04/how-to-prefix-route-a-cakephp-3-rest-api/)
 4. [How to add JWT Authentication to a CakePHP 3 REST API](/2015/04/how-to-add-jwt-authentication-to-a-cakephp-3-rest-api/)
 5. How to make your CakePHP 3 API produce JSON API
-6. [How to use a CakePHP API as the data backend for Ember in 30 minutes](/2017-03-how-to-use-a-cakeph-3-api-as-the-data-backend-for-ember-in-30-minutes.md/)
+6. [How to use a CakePHP API as the data backend for Ember in 30 minutes](/2017/03/how-to-use-a-cakephp-api-as-the-data-backend-for-ember-in-30-minutes/)
 
 Before starting this tutorial either:
 
@@ -206,6 +206,7 @@ full-featured implementation of the specification, the effort should be minimal.
 
 ## Additional reading
 
+- Follow-up tutorial [How to use a CakePHP API as the data backend for Ember in 30 minutes](/2017/03/how-to-use-a-cakephp-api-as-the-data-backend-for-ember-in-30-minutes/)
 - [Crud JsonApiListener documentation](http://crud.readthedocs.io/en/latest/listeners/jsonapi.html)
 - [Git repository](https://github.com/bravo-kernel/application-examples/tree/master/blog-how-to-make-your-cakephp-3-api-produce-jsonapi) with working end state application as produced by this tutorial
 - [neomerx/jsonapi](https://github.com/neomerx/json-api)
