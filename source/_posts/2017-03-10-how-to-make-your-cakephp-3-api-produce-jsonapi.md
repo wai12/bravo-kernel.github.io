@@ -127,10 +127,13 @@ All done, seriously.
 
 ## 4. Using the new API
 
-The JsonApiListener documentation contains very detailed
+Please note that the JsonApiListener documentation contains very detailed
 [usage descriptions](http://crud.readthedocs.io/en/latest/listeners/jsonapi.html#response-formats)
-and since there no point in duplicating them here we will
-provide you with just one example to get you going.
+and since there **no point in duplicating them** here we will
+provide you with just two basic examples to get you going.
+
+> The [Postman collection](https://app.getpostman.com/run-collection/197398a609a6d233a8c2)
+> contains examples of `index`, `view`, `add`, `edit` and `delete`.
 
 **Never forget:**
 
@@ -168,7 +171,53 @@ JSON API format looking similar to:
 }
 ```
 
-> See the Postman collection (top of page) for examples of `index`, `add`, `edit` and `delete`.
+### Add action (POST)
+
+To create a new cocktail send a JSON API request to
+``http://cake3api.app/cocktails`` making sure you are using:
+
+- **HTTP Method** ``GET``
+- **Accept Header** ``application/vnd.api+json``
+- **Content-Type Header** ``application/vnd.api+json``
+
+{% asset_img api-request-headers-add.png 'API Request Headers for add action' %}
+
+Also make sure to set the full or partial body data in (absolutely) correct JSON API format, e.g:
+
+```json
+{
+  "data": {
+    "type": "cocktails",
+    "attributes": {
+      "name": "Some cocktail",
+      "description": "Some description"
+    }
+  }
+}
+```
+
+Now send the request.
+
+If things went well your API should return Status Code 201 (Success) with a response body in
+JSON API format looking similar to:
+
+```json
+{
+  "data": {
+    "type": "cocktails",
+    "id": "24",
+    "attributes": {
+      "name": "Some name",
+      "description": "None inspired description",
+      "created": "2017-03-16T19:01:57+00:00",
+      "modified": "2017-03-16T19:01:57+00:00"
+    },
+    "links": {
+      "self": "/api/cocktails/24"
+    }
+  }
+}    
+```
 
 ## 5. Enabling CORS middleware
 
