@@ -125,8 +125,8 @@ test both where applicable.
 If you don't have a client capable of testing Request Headers you might
 consider using:
 
++ [Postman](https://www.getpostman.com/docs/introduction)
 + the [RESTClient](https://addons.mozilla.org/nl/firefox/addon/restclient/) plugin for Firefox
-+ the [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm) plugin for Chrome
 + the [Cocoa REST Client](http://mmattozzi.github.io/cocoa-rest-client/) if you are on a Mac
 
 > **Note:** for brevity we will only test JSON responses.

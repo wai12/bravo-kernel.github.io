@@ -243,6 +243,16 @@ Enable the plugin by adding this to `config/bootstrap.php`:
 Plugin::load('Cors', ['bootstrap' => true, 'routes' => false]);
 ```
 
+Lastly, make sure to disable the CORS ExceptionRenderer in `config/app.php`
+so it won't override the JsonApiExceptionRenderer responsible for the JSON API
+validation errors:
+
+```php
+  'Cors' => [
+    'exceptionRenderer' => false
+  ]
+```
+
 Please note that the plugin will allow CORS for all origins, all methods and all headers by default
 which is a very good thing as we will start using CORS pretty heavily in the next tutorial.
 
