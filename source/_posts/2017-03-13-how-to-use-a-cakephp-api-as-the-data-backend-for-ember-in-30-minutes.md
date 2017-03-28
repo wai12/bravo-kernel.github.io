@@ -195,16 +195,16 @@ CakePHP templates. To generate the route we will use to hook into our API's `ind
 action we run:
 
 ```bash
-ember generate route cocktails
+ember generate route cocktails/index
 ```
 
 This will:
 
-- create `app/routes/cocktails.js`
-- create `app/templates/cocktails.hbs`
+- create `app/routes/cocktails/index.js`
+- create `app/templates/cocktails/index.hbs`
 - update `app/router.js` to include the newly generated route
 
-Now open `app/routes/cocktails.js` and add our model so **all** cocktail data is
+Now open `app/routes/cocktails/index.js` and add our model so **all** cocktail data is
 automatically fetched from our API when accessing this route/page.
 
 ```js
@@ -218,7 +218,7 @@ export default Ember.Route.extend({
 ```
 
 All that is needed now is updating the template so it will show the
-fetched data so let's update `app/templates/cocktails.js` and make
+fetched data so let's update `app/templates/cocktails/index.js` and make
 it look like this:
 
 ```html
@@ -335,7 +335,7 @@ that will automatically construct and send the correct `DELETE` request
 to our API.
 
 Moment, since all template actions require a corresponding (named) event in the routes file
-first open `app/routes/cocktails.js` and update it to look like this:
+first open `app/routes/cocktails/index.js` and update it to look like this:
 
 ```js
 import Ember from 'ember';
@@ -358,7 +358,7 @@ export default Ember.Route.extend({
 ```
 
 Now that the `deleteCocktail` event/action is in place all that is left to do is updating
-the template with a button so users can trigger the action. To do so, open `templates/application.hbs`
+the index template with a button so users can trigger the action. To do so, open `templates/cocktails/index.hbs`
 and update it to look like this:
 
 ```
@@ -374,8 +374,6 @@ and update it to look like this:
       </tr>
   {{/each}}
 </table>
-
-{{outlet}}
 ```
 
 ### Verify
@@ -448,7 +446,7 @@ export default Ember.Route.extend({
 });
 ```
 
-Open `app/templates/cocktails/add.hbs` and add this basic form 
+Open `app/templates/cocktails/add.hbs` and add this basic form
 the user will use to trigger the `addCocktail` action (rendered
 into the `outlet` tag found in `app/templates/cocktails.hbs` btw):
 
@@ -512,7 +510,7 @@ export default Ember.Route.extend({
 });
 ```
 
-To handle the `id` parameter open `app/router.js` and replace 
+To handle the `id` parameter open `app/router.js` and replace
 `this.route('edit');` with:
 
         this.route('edit', { path: "/edit/:id" });
@@ -548,14 +546,14 @@ as can seen in the following screenshot:
 {% asset_img 13-relationships.png 'Screenshot of Ember data relationships' %}
 
 Please consult the Ember documentation for more information but enabling the
-above relationships was as easy as adding them to the 
+above relationships was as easy as adding them to the
 Ember model like this:
 
 ```js
 export default DS.Model.extend({
   name: attr(),
   code: attr(),
-  native: attr(),  
+  native: attr(),
   currency: belongsTo('currency'),
   cultures: hasMany('culture')
 });
@@ -564,8 +562,8 @@ export default DS.Model.extend({
 ## Bonus: Validation Errors
 
 Because your CakePHP API is producing JSON API compatible (validation)
-errors... those are handled by Ember Data automatically as well, making 
-them instantly availble in your frontend as can be seen in the 
+errors... those are handled by Ember Data automatically as well, making
+them instantly availble in your frontend as can be seen in the
 screenshot below where:
 
 - your API is returning the 422 validation error along with validation error messages
