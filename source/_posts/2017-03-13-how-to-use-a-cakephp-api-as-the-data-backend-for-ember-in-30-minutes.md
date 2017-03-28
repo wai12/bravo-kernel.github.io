@@ -447,8 +447,7 @@ export default Ember.Route.extend({
 ```
 
 Open `app/templates/cocktails/add.hbs` and add this basic form
-the user will use to trigger the `addCocktail` action (rendered
-into the `outlet` tag found in `app/templates/cocktails.hbs` btw):
+the user will use to trigger the `addCocktail` action:
 
 ```html
 <h3>New Cocktail:</h3>
