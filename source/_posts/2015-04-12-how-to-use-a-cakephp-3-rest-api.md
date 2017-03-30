@@ -21,10 +21,10 @@ We will address the most common use cases by:
 (already listening at ``http://cake3api.app``)
 2. Accessing the cocktail resources through our API using the:
     + index action (GET)
-	+ view action (GET)
-	+ add action (POST)
-	+ edit/update action (PUT)
-	+ delete action (DELETE)
+    + view action (GET)
+    + add action (POST)
+    + edit/update action (PUT)
+    + delete action (DELETE)
 3. Configuring Pagination
 4. Testing Querystring Parameters
 
@@ -112,8 +112,6 @@ bin/cake bake template Cocktails
 
 If things went well browsing to ``http://cake3api.app/cocktails`` should
 display something similar to:
-
-<br />
 
 {% asset_img browser-cocktails-index.png 'Cocktails index' %}
 

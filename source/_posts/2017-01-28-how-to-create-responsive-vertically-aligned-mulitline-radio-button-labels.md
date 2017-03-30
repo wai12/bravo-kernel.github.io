@@ -12,13 +12,9 @@ aligned  multiline labels (using either plain CSS or Foundation 6).
 
 <strong>[Fiddle example](https://jsfiddle.net/bravo_kernel/wuxysegc/)</strong>
 
-<br />
-
 {% asset_img preview-vertical-radio-buttons.png 'Preview of vertically aligned radio button labels' %}
 
-
 ## The HTML
- 
 
 ```html
   <!-- optionally include the Foundation 6 framework -->

@@ -126,8 +126,6 @@ If things went well you should now be able to:
 + create a new user
 + see the created user with hashed password
 
-<br />
-
 {% asset_img browser-users-index.png 'Users index' %}
 
 ## 3. Adding the JWT Plugin
@@ -304,10 +302,7 @@ body containing:
 + the id of the new user
 + a ``token`` field containing the new user's JWT token
 
-<br />
-
 {% asset_img jwt-primer-registration.png 'JWT primer: user registration' %}
-
 
 ### Create the /register  action
 
@@ -386,10 +381,7 @@ is valid by:
 If things went well you should see a **green** success message along with the user id and JWT exp
 claim as stored in the token:
 
-<br />
-
 {% asset_img jwt-io-signature-verification.png 'jwt.io successful signature verification' %}
-
 
 ## 9. Implementing JWT Token Requests
 
@@ -401,8 +393,6 @@ validate the credentials.
 
 If validation is successful a JSON 200 response (Success) will be returned with a response
 body containing the JWT token.
-
-<br />
 
 {% asset_img jwt-primer-token.png 'JWT primer: token request' %}
 
@@ -463,16 +453,12 @@ only the JWT token similar to:
 > first follow [these instructions](https://github.com/ADmad/cakephp-jwt-auth#working)
 > if the tests below are not functioning as described.
 
-
 ### How it works
 
 When accessing an API resource that requires authentication the JWT Plugin will look for a token
 in the ``Authorization`` header and will validate it using the ``Salt`` value used by your application.
 
 If validation is successful a JSON 200 response (Success) will be returned with application produced body.
-
-
-<br />
 
 {% asset_img jwt-primer-authentication.png 'JWT primer: authentication process' %}
 

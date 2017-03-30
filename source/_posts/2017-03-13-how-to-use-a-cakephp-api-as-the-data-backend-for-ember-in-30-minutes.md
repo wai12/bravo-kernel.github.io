@@ -115,8 +115,6 @@ ember new ember-frontend
 cd ember-frontend
 ```
 
-<br />
-
 {% asset_img 01-ember-cli-new-application.png 'Screenshot of ember-cli generating the Ember application' %}
 
 ## 4. Meeting Ember
@@ -125,8 +123,6 @@ Since this is basically all that is needed to create a new Ember application thi
 to take a quick look at the files and folders to get a quick first impression of the application structure.
 
 To see your Ember application in action run `ember serve` and browse to `http://cakebox:4200`:
-
-<br />
 
 {% asset_img 02-ember-welcome-page.png 'Screenshot of Ember welcome page' %}
 
@@ -246,8 +242,6 @@ Now that you have created your first API-driven page verify Ember is actually fe
 - browse to your Ember application at `cakebox:4200/cocktails`
 - make sure it displays the records as found in your CakePHP database:
 
-<br />
-
 {% asset_img 03-ember-showing-data-from-cakephp-api-index-action.png 'Ember showing data fetched from CakePHP API' %}
 
 ## 8. Using Ember Inspector
@@ -264,8 +258,6 @@ The API resources used by your Ember frontend can be found by:
 - selecting the `Network` tab
 - browsing to `cakebox:4200/cocktails`
 
-<br />
-
 {% asset_img 04-ember-inspector-network.png 'Ember Inspector API network resource' %}
 
   - **upper arrow**: tells us that a network resource named `cocktails` was fetched
@@ -277,8 +269,6 @@ using jquery (executed by Ember Data)
 
 To zoom in on the API resource and inspect the headers simply click `cocktails` which
 should give you something like:
-
-<br />
 
 {% asset_img 05-ember-inspector-api-resource-zoom-headers.png 'Ember Inspector zoom in on API network resource headers' %}
 
@@ -293,9 +283,6 @@ the `Response` tab. This should look more than familiar since you have implement
 JSON API during the previous tutorial (pretty cool).
 
 *FYI the `Preview` tab will show the exact same results but objectied for easy click-through.*
-
-
-<br />
 
 {% asset_img 06-ember-inspector-api-resource-response.png 'Ember Inspector show API response' %}
 
@@ -313,8 +300,6 @@ You should notice two things:
 - the attributes are corresponding to the Ember `cocktail` model we created earlier
 - and are thus missing the `modified` attribute we excluded (even though our API is servicing it)
 
-<br />
-
 {% asset_img 07-ember-inspector-api-data-main.png 'Ember Inspector Ember Data main' %}
 
 ### Inspecting Ember Data record details
@@ -322,8 +307,6 @@ You should notice two things:
 Every record contains very detailed information which is revealed when clicking a record.
 
 *Relationship information (`belongsTo`, `hasMany`) will appear in the `Flags` section when applicable.*
-
-<br />
 
 {% asset_img 08-ember-inspector-api-record-details.png 'Ember Inspector Ember Data record details' %}
 
@@ -387,8 +370,6 @@ Verify you are able to delete records in your API by using the Ember page by:
 - making sure it now displays `Delete` buttons
 - pressing one of the `Delete` buttons (and confirming the delete)
 
-<br />
-
 {% asset_img 09-delete-action-page.png 'Ember delete action page' %}
 
 If things went well:
@@ -400,8 +381,6 @@ If things went well:
 - the record was deleted from your CakePHP database
 - refreshing the page should no longer show the deleted record
 - you should by now be quite impressed with how easy that actually was
-
-<br />
 
 {% asset_img 10-delete-action-two-requests.png 'Ember delete action two requests' %}
 
@@ -475,8 +454,6 @@ If things went well:
   - one for the actual `POST` request
 - you should be able to see the new record in your CakePHP database
 
-<br />
-
 {% asset_img 11-add-action-page.png 'Screenshot of Ember add action page' %}
 
 ## 11. Adding the view/edit actions
@@ -530,8 +507,6 @@ Update `app/templates/cocktails/edit.hbs` so it looks like this:
 All done, browse to `http://cakebox:4200/cocktails/edit/3` and verify that you can
 view, edit and save the record.
 
-<br />
-
 {% asset_img 12-view-edit-action-page.png 'Screenshot of Ember view/edit action page' %}
 
 ## Bonus: Relational Data
@@ -539,8 +514,6 @@ view, edit and save the record.
 For simplicity's sake we did not touch the subject in this tutorial but... Ember Data will
 also (automatically) detect and handle your API's `belongsTo` and `hasMany` relationships
 as can seen in the following screenshot:
-
-<br />
 
 {% asset_img 13-relationships.png 'Screenshot of Ember data relationships' %}
 
@@ -567,8 +540,6 @@ screenshot below where:
 
 - your API is returning the 422 validation error along with validation error messages
 - Ember Data picks up the validation messages and makes them avaible for display on the page
-
-<br />
 
 {% asset_img 14-validation-errors.png 'Screenshot of Ember data validation errors' %}
 

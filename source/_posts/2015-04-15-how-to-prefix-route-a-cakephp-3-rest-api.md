@@ -221,8 +221,6 @@ went will it:
 + should no longer produce a JSON/XML response
 + should instead show an HTML ``MissingController`` exception similar to the one below
 
-<br />
-
 {% asset_img browser-missing-controller.png 'Cocktails index after prefixing route' %}
 
 ### 3. Test non-API access
@@ -232,8 +230,6 @@ function as expected.
 
 To verify browe to ``http://cake3api.app/cocktails`` which should still produce the familiar
 CakePHP index page:
-
-<br />
 
 {% asset_img browser-cocktails-index.png 'Cocktails index' %}
 

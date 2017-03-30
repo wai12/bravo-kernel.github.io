@@ -52,8 +52,6 @@ Download and run the Composer [Windows installer](https://getcomposer.org/downlo
 
 Make sure that the installer detects your PHP installation before completing the installation:
 
-<br />
-
 {% asset_img composer-install-verify-php-detection.png 'Screenshot of Composer installation detecting PHP' %}
 
 Good to know:
@@ -77,8 +75,6 @@ so we change it.
 
 5. Under `System Variables`, press `New` and enter the following settings:
 
-  <br />
-
   {% asset_img composer-global-install-path-env.png 'Screenshot of new system variable' %}
 
 6. Select `OK` to round up this step
@@ -100,8 +96,6 @@ variable.
 5. Select `Edit` 
 
 6. Select `New` and enter `C:\Program Files\php-x64\composer\vendor\bin` like shown below:
-
-  <br />
 
   {% asset_img composer-global-vendor-bin-path-env.png 'Screenshot of editing existing PATH system variable' %}
 
@@ -198,8 +192,6 @@ To verify the plugin is functioning properly:
 - Select `Composer: Validate` and pressing enter
 
 - If things went well you should see something like this:
-
-  <br />
 
   {% asset_img vscode-composer-integration.png 'Screenshot of Composer validation feedback' %}
 
