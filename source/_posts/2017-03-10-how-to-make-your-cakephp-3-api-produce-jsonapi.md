@@ -248,7 +248,7 @@ so the JSON API (validation) errors keep functioning as expected:
 
 ```php
   'Cors' => [
-    'exceptionRenderer' => 'Crud\Error\JsonApiExceptionRenderer'
+    'exceptionRenderer' => '\Crud\Error\JsonApiExceptionRenderer'
   ]
 ```
 
