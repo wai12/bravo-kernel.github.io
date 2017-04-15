@@ -243,13 +243,22 @@ Enable the plugin by adding this to `config/bootstrap.php`:
 Plugin::load('Cors', ['bootstrap' => true, 'routes' => false]);
 ```
 
-Lastly, make sure to override the CORS ExceptionRenderer in `config/app.php`
-so the JSON API (validation) errors keep functioning as expected:
+To complete, specify the correct ExceptionRenderers in `config/app.php`
+so the JSON API (validation) errors keep functioning as expected whilst
+also respecting CORS headers:
 
 ```php
-  'Cors' => [
-    'exceptionRenderer' => '\Crud\Error\JsonApiExceptionRenderer'
-  ]
+    'Error' => [
+        'errorLevel' => E_ALL & ~E_DEPRECATED,
+        'exceptionRenderer' => '\Crud\Error\JsonApiExceptionRenderer',
+        'skipLog' => [],
+        'log' => true,
+        'trace' => true,
+    ],
+
+    'Cors' => [
+        'exceptionRenderer' => '\Cors\Error\AppExceptionRenderer'
+    ],
 ```
 
 Please note that the plugin will allow CORS for all origins, all methods and all headers by default
