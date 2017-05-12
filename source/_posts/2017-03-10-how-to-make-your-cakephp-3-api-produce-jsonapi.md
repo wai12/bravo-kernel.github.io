@@ -37,7 +37,7 @@ Before starting this tutorial either:
 [end-state application sources](https://github.com/bravo-kernel/application-examples/tree/master/blog-how-to-make-your-cakephp-3-api-produce-jsonapi),
 composer installing and running the database migration
 
-## 1. Update your project
+## 1. Install required packages
 
 To make sure your API is using an up-to-date version of CakePHP and the 
 required version of the Crud plugin now update your project's
@@ -47,9 +47,7 @@ composer packages by running:
 composer update
 ```
 
-## 2. Install required composer packages
-
-Make sure to update crud to at least version 5.0.0:
+Update Crud to at least version 5.0.0:
 
 ```bash
 composer require friendsofcake/crud:^5.0
@@ -61,15 +59,15 @@ Remove any previous version of the neomerx package:
 composer remove neomerx/json-api
 ```
 
-Lastly, install the
+Lastly, add the 
 [Crud JsonApi listener](https://github.com/FriendsOfCake/crud-json-api)
-by running:
+to your application by running:
 
 ```bash
 composer require friendsofcake/crud-json-api
 ```
 
-## 3. Disable JWT authentication
+## 2. Disable JWT authentication
 
 Since JWT authentication is unrelated to JSON API we will disable it by 
 removing the related lines in `src/Controller/Api/AppController`
