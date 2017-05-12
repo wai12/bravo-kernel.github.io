@@ -12,11 +12,10 @@ tags:
 
 In this follow-up post to
 [How to add JWT Authentication to a CakePHP 3 REST API](/2015/04/how-to-add-jwt-authentication-to-a-cakephp-3-rest-api/)
-we will update our existing API so it will adhere to the
-[JSON API specification](http://jsonapi.org/) giving you the
-benefits of standardization and instant compatibility with JSON API supporting tools and frameworks
-like [Ember Data's JSONAPIAdapter](https://github.com/emberjs/data#a-brief-note-on-adapters).
-
+we will update our existing API so it will produce 
+[JSON API](http://jsonapi.org/) compliant output giving you the
+benefits of standardization and instant compatibility with JSON API supporting tools 
+like [Ember Data](https://github.com/emberjs/data#a-brief-note-on-adapters).
 
 [> API methods used in this post shared with Postman](https://app.getpostman.com/run-collection/197398a609a6d233a8c2)
 
@@ -38,17 +37,7 @@ Before starting this tutorial either:
 [end-state application sources](https://github.com/bravo-kernel/application-examples/tree/master/blog-how-to-make-your-cakephp-3-api-produce-jsonapi),
 composer installing and running the database migration
 
-## 1. Install Neomerx/jsonapi
-
-The Crud JsonApiListener used to produce the JSON API
-depends on the [neomerx/jsonapi](https://github.com/neomerx/json-api)
-package so install that first by running:
-
-```bash
-composer require neomerx/json-api:^0.8.10
-```
-
-## 2. Upgrade project packages
+## 1. Update your project
 
 To make sure your API is using an up-to-date version of CakePHP and the 
 required version of the Crud plugin now update your project's
@@ -58,7 +47,27 @@ composer packages by running:
 composer update
 ```
 
-> Please note that the Crud JsonApiListener is not available in Crud releases prior to 4.4.0.
+## 2. Install required composer packages
+
+Make sure to update crud to at least version 5.0.0:
+
+```bash
+composer require friendsofcake/crud:^5.0
+```
+
+Remove any previous version of the neomerx package:
+
+```bash
+composer remove neomerx/json-api
+```
+
+Lastly, install the
+[Crud JsonApi listener](https://github.com/FriendsOfCake/crud-json-api)
+by running:
+
+```bash
+composer require friendsofcake/crud-json-api
+```
 
 ## 3. Disable JWT authentication
 
@@ -117,8 +126,8 @@ listener with `Crud.JsonAPi` so it looks like:
 
 ```php
             'listeners' => [
-                'Crud.JsonApi',
-                'Crud.ApiPagination',
+                'CrudJsonApi.JsonApi',
+                'CrudJsonApi.Pagination', // Pagination != ApiPagination
                 'Crud.ApiQueryLog'
             ]
 ```
@@ -273,6 +282,7 @@ full-featured implementation of the specification, the effort should be minimal.
 
 ## Additional reading
 
+- [Crud JsonApiListener documentation](https://crud-json-api.readthedocs.io/en/latest/)
 - Follow-up tutorial [How to use a CakePHP API as the data backend for Ember in 30 minutes](/2017/03/how-to-use-a-cakephp-api-as-the-data-backend-for-ember-in-30-minutes/)
 - [Crud JsonApiListener documentation](http://crud.readthedocs.io/en/latest/listeners/jsonapi.html)
 - [Git repository](https://github.com/bravo-kernel/application-examples/tree/master/blog-how-to-make-your-cakephp-3-api-produce-jsonapi) with working end state application as produced by this tutorial
