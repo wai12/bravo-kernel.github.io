@@ -33,11 +33,11 @@ inside the Git Bash:
 
 ## Re-installing hexo
 
-For those re-installing Hexo and using an existing hexo blog repository:
+For those re-installing Hexo from an existing hexo blog repository:
 
-- do NOT create the directory described step 1 but checkout your blog repo instead
-- cd into your repo directory and git checkout the `source` branch
-- then simply follow the exact same steps (starting from 2) but SKIP the ``hexo init`` command
+1. do NOT create the directory described step 1 but checkout your blog repo instead
+2. cd into your repo directory and git checkout the `source` branch
+3. continue with step 2 below but SKIP the ``hexo init`` command
 
 ## Installing hexo
 
