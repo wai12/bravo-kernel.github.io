@@ -8,8 +8,8 @@
   
   <meta name="description" content="In this follow-up post to
 How to add JWT Authentication to a CakePHP 3 REST API
-we will update our existing API so it will produce 
-JSON API compliant">
+we will update our existing API so it will produce
+JSON API compliant ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -70,7 +70,7 @@ JSON API compliant">
         <div class="icon"></div>
         <time datetime="2017-03-10T19:10:24.000Z"><a href="/2017/03/how-to-make-your-cakephp-3-api-produce-jsonapi/">Mar 10 2017</a></time>
 		
-			<span class="updated" title="Post Updated"><span>Mar 14 2018</span></span>
+			<span class="updated" title="Post Updated"><span>Mar 23 2018</span></span>
         
 		<div class="github-improve"><a href="https://github.com/bravo-kernel/bravo-kernel.github.io/tree/source/source/_posts/2017-03-10-how-to-make-your-cakephp-3-api-produce-jsonapi.md">Improve on Github</a></div>
       
@@ -84,9 +84,9 @@ JSON API compliant">
       
         <p>In this follow-up post to
 <a href="/2015/04/how-to-add-jwt-authentication-to-a-cakephp-3-rest-api/">How to add JWT Authentication to a CakePHP 3 REST API</a>
-we will update our existing API so it will produce 
+we will update our existing API so it will produce
 <a href="http://jsonapi.org/" target="_blank" rel="noopener">JSON API</a> compliant output giving you the
-benefits of standardization and instant compatibility with JSON API supporting tools 
+benefits of standardization and instant compatibility with JSON API supporting tools
 like <a href="https://github.com/emberjs/data#a-brief-note-on-adapters" target="_blank" rel="noopener">Ember Data</a>.</p>
 <p><a href="https://app.getpostman.com/run-collection/197398a609a6d233a8c2" target="_blank" rel="noopener">&gt; API methods used in this post shared with Postman</a></p>
 <h2 id="Before-We-Begin"><a href="#Before-We-Begin" class="headerlink" title="Before We Begin"></a>Before We Begin</h2><p>This is part five of the CakePHP 3 REST API tutorial series:</p>
@@ -105,7 +105,7 @@ like <a href="https://github.com/emberjs/data#a-brief-note-on-adapters" target="
 <a href="https://github.com/bravo-kernel/application-examples/tree/master/blog-how-to-make-your-cakephp-3-api-produce-jsonapi" target="_blank" rel="noopener">end-state application sources</a>,
 composer installing and running the database migration</li>
 </ul>
-<h2 id="1-Install-required-packages"><a href="#1-Install-required-packages" class="headerlink" title="1. Install required packages"></a>1. Install required packages</h2><p>To make sure your API is using an up-to-date version of CakePHP and the 
+<h2 id="1-Install-required-packages"><a href="#1-Install-required-packages" class="headerlink" title="1. Install required packages"></a>1. Install required packages</h2><p>To make sure your API is using an up-to-date version of CakePHP and the
 required version of the Crud plugin now update your project’s
 composer packages by running:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer update</span><br></pre></td></tr></table></figure>
@@ -113,11 +113,11 @@ composer packages by running:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require friendsofcake/crud:^5.0</span><br></pre></td></tr></table></figure>
 <p>Remove any previous version of the neomerx package:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer remove neomerx/json-api</span><br></pre></td></tr></table></figure>
-<p>Lastly, add the 
+<p>Lastly, add the
 <a href="https://github.com/FriendsOfCake/crud-json-api" target="_blank" rel="noopener">Crud JsonApi listener</a>
 to your application by running:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require friendsofcake/crud-json-api</span><br></pre></td></tr></table></figure>
-<h2 id="2-Disable-JWT-authentication"><a href="#2-Disable-JWT-authentication" class="headerlink" title="2. Disable JWT authentication"></a>2. Disable JWT authentication</h2><p>Since JWT authentication is unrelated to JSON API we will disable it by 
+<h2 id="2-Disable-JWT-authentication"><a href="#2-Disable-JWT-authentication" class="headerlink" title="2. Disable JWT authentication"></a>2. Disable JWT authentication</h2><p>Since JWT authentication is unrelated to JSON API we will disable it by
 removing the related lines in <code>src/Controller/Api/AppController</code>
 which should leave you with a file looking like this:</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Controller</span>\<span class="title">Api</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Cake</span>\<span class="title">Controller</span>\<span class="title">Controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Cake</span>\<span class="title">Event</span>\<span class="title">Event</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * AppController specific to API resources</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">use</span> \<span class="title">Crud</span>\<span class="title">Controller</span>\<span class="title">ControllerTrait</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">initialize</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">parent</span>::initialize();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">$this</span>-&gt;loadComponent(<span class="string">'RequestHandler'</span>);</span><br><span class="line">        <span class="keyword">$this</span>-&gt;loadComponent(<span class="string">'Crud.Crud'</span>, [</span><br><span class="line">            <span class="string">'actions'</span> =&gt; [</span><br><span class="line">                <span class="string">'Crud.Index'</span>,</span><br><span class="line">                <span class="string">'Crud.View'</span>,</span><br><span class="line">                <span class="string">'Crud.Add'</span>,</span><br><span class="line">                <span class="string">'Crud.Edit'</span>,</span><br><span class="line">                <span class="string">'Crud.Delete'</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="string">'listeners'</span> =&gt; [</span><br><span class="line">                <span class="string">'Crud.Api'</span>,</span><br><span class="line">                <span class="string">'Crud.ApiPagination'</span>,</span><br><span class="line">                <span class="string">'Crud.ApiQueryLog'</span></span><br><span class="line">            ]</span><br><span class="line">        ]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -145,7 +145,7 @@ contains examples of <code>index</code>, <code>view</code>, <code>add</code>, <c
 <li>ALL requests to your new API MUST use the <code>application/vnd.api+json</code> Accept Header</li>
 <li>ALL requests with post data MUST use the <code>application/vnd.api+json</code> Content-Type Header</li>
 </ul>
-<h3 id="View-action-GET"><a href="#View-action-GET" class="headerlink" title="View action (GET)"></a>View action (GET)</h3><p>For this example we are in the mood for a Mojito so we query 
+<h3 id="View-action-GET"><a href="#View-action-GET" class="headerlink" title="View action (GET)"></a>View action (GET)</h3><p>For this example we are in the mood for a Mojito so we query
 <code>http://cake3api.app/cocktails/3</code> making sure we are using:</p>
 <ul>
 <li><strong>HTTP Method</strong> <code>GET</code></li>
@@ -189,10 +189,6 @@ also respecting CORS headers:</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Error'</span> =&gt; [</span><br><span class="line">    <span class="string">'errorLevel'</span> =&gt; E_ALL &amp; ~E_DEPRECATED,</span><br><span class="line">    <span class="string">'exceptionRenderer'</span> =&gt; <span class="string">'\Crud\Error\JsonApiExceptionRenderer'</span>,</span><br><span class="line">    <span class="string">'skipLog'</span> =&gt; [],</span><br><span class="line">    <span class="string">'log'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">    <span class="string">'trace'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">],</span><br><span class="line"></span><br><span class="line"><span class="string">'Cors'</span> =&gt; [</span><br><span class="line">    <span class="string">'exceptionRenderer'</span> =&gt; <span class="string">'\Cors\Error\AppExceptionRenderer'</span></span><br><span class="line">],</span><br></pre></td></tr></table></figure>
 <p>Please note that the plugin will allow CORS for all origins, all methods and all headers by default
 which is a very good thing as we will start using CORS pretty heavily in the next tutorial.</p>
-<h2 id="6-Make-it-better"><a href="#6-Make-it-better" class="headerlink" title="6. Make it better"></a>6. Make it better</h2><p>Even though the JsonApiListener is already quite feature-complete, some parts of the JSON API specification 
-(like <a href="http://jsonapi.org/format/#fetching-sparse-fieldsets" target="_blank" rel="noopener">Sparse Fieldsets</a> and query parameters) have
-not been implemented yet. Feel free to submit a PR for missing functionality and help work towards a
-full-featured implementation of the specification, the effort should be minimal.</p>
 <h2 id="Additional-reading"><a href="#Additional-reading" class="headerlink" title="Additional reading"></a>Additional reading</h2><ul>
 <li><a href="https://crud-json-api.readthedocs.io/en/latest/" target="_blank" rel="noopener">Crud JsonApiListener documentation</a></li>
 <li>Follow-up tutorial <a href="/2017/03/how-to-use-a-cakephp-api-as-the-data-backend-for-ember-in-30-minutes/">How to use a CakePHP API as the data backend for Ember in 30 minutes</a></li>
