@@ -12,9 +12,9 @@ tags:
 
 In this follow-up post to
 [How to add JWT Authentication to a CakePHP 3 REST API](/2015/04/how-to-add-jwt-authentication-to-a-cakephp-3-rest-api/)
-we will update our existing API so it will produce 
+we will update our existing API so it will produce
 [JSON API](http://jsonapi.org/) compliant output giving you the
-benefits of standardization and instant compatibility with JSON API supporting tools 
+benefits of standardization and instant compatibility with JSON API supporting tools
 like [Ember Data](https://github.com/emberjs/data#a-brief-note-on-adapters).
 
 [> API methods used in this post shared with Postman](https://app.getpostman.com/run-collection/197398a609a6d233a8c2)
@@ -39,7 +39,7 @@ composer installing and running the database migration
 
 ## 1. Install required packages
 
-To make sure your API is using an up-to-date version of CakePHP and the 
+To make sure your API is using an up-to-date version of CakePHP and the
 required version of the Crud plugin now update your project's
 composer packages by running:
 
@@ -59,7 +59,7 @@ Remove any previous version of the neomerx package:
 composer remove neomerx/json-api
 ```
 
-Lastly, add the 
+Lastly, add the
 [Crud JsonApi listener](https://github.com/FriendsOfCake/crud-json-api)
 to your application by running:
 
@@ -69,7 +69,7 @@ composer require friendsofcake/crud-json-api
 
 ## 2. Disable JWT authentication
 
-Since JWT authentication is unrelated to JSON API we will disable it by 
+Since JWT authentication is unrelated to JSON API we will disable it by
 removing the related lines in `src/Controller/Api/AppController`
 which should leave you with a file looking like this:
 
@@ -149,7 +149,7 @@ provide you with just two basic examples to get you going.
 
 ### View action (GET)
 
-For this example we are in the mood for a Mojito so we query 
+For this example we are in the mood for a Mojito so we query
 ``http://cake3api.app/cocktails/3`` making sure we are using:
 
 - **HTTP Method** ``GET``
@@ -223,7 +223,7 @@ JSON API format looking similar to:
       "self": "/api/cocktails/24"
     }
   }
-}    
+}
 ```
 
 ## 5. Enabling CORS middleware
@@ -270,13 +270,6 @@ also respecting CORS headers:
 
 Please note that the plugin will allow CORS for all origins, all methods and all headers by default
 which is a very good thing as we will start using CORS pretty heavily in the next tutorial.
-
-## 6. Make it better
-
-Even though the JsonApiListener is already quite feature-complete, some parts of the JSON API specification 
-(like [Sparse Fieldsets](http://jsonapi.org/format/#fetching-sparse-fieldsets) and query parameters) have
-not been implemented yet. Feel free to submit a PR for missing functionality and help work towards a
-full-featured implementation of the specification, the effort should be minimal.
 
 ## Additional reading
 
