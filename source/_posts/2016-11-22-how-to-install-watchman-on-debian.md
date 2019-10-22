@@ -14,6 +14,7 @@ sudo apt-get install build-essential
 sudo apt-get install python-dev
 sudo apt-get install automake
 sudo apt-get install autoconf
+sudo apt-get install libtool
 
 cd /tmp
 git clone https://github.com/facebook/watchman.git
