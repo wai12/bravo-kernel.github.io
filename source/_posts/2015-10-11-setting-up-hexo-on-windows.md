@@ -1,3 +1,4 @@
+---
 title: "Setting up Hexo on Windows"
 date: 2015-10-11 15:45:43
 categories:
@@ -13,7 +14,7 @@ Follow these instructions to install and configure the
 
 - [Git Bash](https://git-scm.com/)
 
-## Installing Node.js
+## 1. Install Node.js
 
 1. Install Node.js
 
@@ -31,7 +32,7 @@ inside the Git Bash:
     npm -v
     ```
 
-## Re-installing hexo
+## 2a. Re-install hexo
 
 For those re-installing Hexo from an existing hexo blog repository:
 
@@ -39,7 +40,7 @@ For those re-installing Hexo from an existing hexo blog repository:
 2. cd into your repo directory and git checkout the `source` branch
 3. continue with step 2 below but SKIP the ``hexo init`` command
 
-## Installing hexo
+## 2b. Install Fresh Hexo
 
 Please note that all commands are to be executed within the Git Bash.
 
@@ -70,7 +71,7 @@ Please note that all commands are to be executed within the Git Bash.
     - customizing `_config.yml` to your likings
     - creating your first post by running ``hexo new``
 
-## Deploying
+## 3. Deploy
 
 The hexo git deployer has taken all the hard work out of deploying your
 blog to your master repo.
@@ -87,3 +88,7 @@ blog to your master repo.
     ```bash
     hexo generate -d
     ```
+
+## 4. Save Local Changes
+
+**Do not forget** to save your local changes by commit pushing them to the `source` branch of your central repository.

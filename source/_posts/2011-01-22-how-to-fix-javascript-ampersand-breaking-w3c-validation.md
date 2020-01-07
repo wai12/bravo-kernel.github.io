@@ -15,8 +15,10 @@ If your page doesn't pass [W3C Validation](http://validator.w3.org/ "Markup Vali
 
 Encapsulate your script inside a CDATA tag and the W3C parser will ignore it.
 
-	<script type="text/javascript">
-		//<![CDATA[
-			script here
-		//]]>
-	</script>
+```js
+<script type="text/javascript">
+	//<![CDATA[
+		script here
+	//]]>
+</script>
+```

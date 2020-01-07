@@ -2,9 +2,11 @@ title: How to use remote Git branches
 alias: /blog/2010/08/how-to-use-remote-git-branches/index.html
 date: 2010-08-10 14:39:59 +0200
 categories:
-- Git
+-  Git
 tags:
-- git
+- Git
+  -   Wheezy
+- validator
 ---
 
 ## Create a feature branch:

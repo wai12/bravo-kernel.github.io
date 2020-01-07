@@ -1,10 +1,10 @@
 title: How to install Watchman on Debian
-tags:
-  - debian
-  - ember
-categories:
-  - Debian
 date: 2016-11-22 12:54:38
+categories:
+- Debian
+tags:
+- debian
+- ember
 ---
 
 To globally install Watchman on Debian:
