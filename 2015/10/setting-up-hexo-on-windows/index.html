@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <title>Setting up Hexo on Windows | Bravo Kernel</title>
@@ -11,7 +11,7 @@ Hexo blog framework on Windows.
 Requirements
 Git Bash
 
-Installing Node.js
+1. Install Node.js
 Install Node.js
  
 
@@ -20,16 +20,17 @@ Ma">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Setting up Hexo on Windows">
-  <meta property="og:site_name" content="Bravo Kernel">
+  <meta property="og:title" content="Setting up Hexo on Windows"/>
+  <meta property="og:site_name" content="Bravo Kernel"/>
 
   
-    <meta property="og:image" content="undefined">
+    <meta property="og:image" content=""/>
   
 
   <link href="/favicon.png" rel="icon">
   <link rel="alternate" href="/atom.xml" title="Bravo Kernel" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <script data-ad-client="ca-pub-1161412231963156" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -46,8 +47,8 @@ Ma">
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
@@ -76,9 +77,9 @@ Ma">
         <div class="icon"></div>
         <time datetime="2015-10-11T13:45:43.000Z"><a href="/2015/10/setting-up-hexo-on-windows/">Oct 11 2015</a></time>
 		
-			<span class="updated" title="Post Updated"><span>Mar 14 2018</span></span>
+			<span class="updated" title="Post Updated"><span>Jan 7 2020</span></span>
         
-		<div class="github-improve"><a href="https://github.com/bravo-kernel/bravo-kernel.github.io/tree/source/source/_posts/2015-10-11-setting-up-hexo-on-windows.md">Improve on Github</a></div>
+		<div class="github-improve"><a href="https://github.com/bravo-kernel/bravo-kernel.github.io/tree/source/source/_posts/2015-10-11-setting-up-hexo-on-windows.md" target="_blank" rel="noopener">Improve on Github</a></div>
       
       
   
@@ -93,7 +94,7 @@ Ma">
 <h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ul>
 <li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git Bash</a></li>
 </ul>
-<h2 id="Installing-Node-js"><a href="#Installing-Node-js" class="headerlink" title="Installing Node.js"></a>Installing Node.js</h2><ol>
+<h2 id="1-Install-Node-js"><a href="#1-Install-Node-js" class="headerlink" title="1. Install Node.js"></a>1. Install Node.js</h2><ol>
 <li><p>Install Node.js</p>
 <p> <img src="node-js-installer.png" alt="Node.js Windows Installer"></p>
 </li>
@@ -103,22 +104,21 @@ Ma">
 <li><p>Verify the installation by running the following commands
 inside the Git Bash:</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
-<h2 id="Re-installing-hexo"><a href="#Re-installing-hexo" class="headerlink" title="Re-installing hexo"></a>Re-installing hexo</h2><p>For those re-installing Hexo from an existing hexo blog repository:</p>
+<h2 id="2a-Re-install-hexo"><a href="#2a-Re-install-hexo" class="headerlink" title="2a. Re-install hexo"></a>2a. Re-install hexo</h2><p>For those re-installing Hexo from an existing hexo blog repository:</p>
 <ol>
 <li>do NOT create the directory described step 1 but checkout your blog repo instead</li>
 <li>cd into your repo directory and git checkout the <code>source</code> branch</li>
 <li>continue with step 2 below but SKIP the <code>hexo init</code> command</li>
 </ol>
-<h2 id="Installing-hexo"><a href="#Installing-hexo" class="headerlink" title="Installing hexo"></a>Installing hexo</h2><p>Please note that all commands are to be executed within the Git Bash.</p>
+<h2 id="2b-Install-Fresh-Hexo"><a href="#2b-Install-Fresh-Hexo" class="headerlink" title="2b. Install Fresh Hexo"></a>2b. Install Fresh Hexo</h2><p>Please note that all commands are to be executed within the Git Bash.</p>
 <ol>
 <li><p>Create a new directory that will hold your blog</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br></pre></td></tr></table></figure></li>
 <li><p>Install the hexo framework and the git deployer</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure></li>
 <li><p>Initialize your blog</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">hexo serve</span><br></pre></td></tr></table></figure>
 </li>
@@ -131,7 +131,7 @@ inside the Git Bash:</p>
 </ul>
 </li>
 </ol>
-<h2 id="Deploying"><a href="#Deploying" class="headerlink" title="Deploying"></a>Deploying</h2><p>The hexo git deployer has taken all the hard work out of deploying your
+<h2 id="3-Deploy"><a href="#3-Deploy" class="headerlink" title="3. Deploy"></a>3. Deploy</h2><p>The hexo git deployer has taken all the hard work out of deploying your
 blog to your master repo.</p>
 <ol>
 <li><p>First load your Github private key inside the Git Bash</p>
@@ -139,8 +139,10 @@ blog to your master repo.</p>
 </li>
 <li><p>Now simply generate and deploy your blog</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate -d</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
+<h2 id="4-Save-Local-Changes"><a href="#4-Save-Local-Changes" class="headerlink" title="4. Save Local Changes"></a>4. Save Local Changes</h2><p><strong>Do not forget</strong> to save your local changes by commit pushing them to the <code>source</code> branch of your central repository.</p>
 
       
     </div>
@@ -191,7 +193,7 @@ blog to your master repo.</p>
 
   
   <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
   </div>
   
 </section>

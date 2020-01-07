@@ -14,7 +14,7 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>How to install Powershell Core on Ubuntu</title>
@@ -34,6 +34,7 @@
       
     
     </summary>
+    
     
       <category term="devops" scheme="http://bravo-kernel.com/categories/devops/"/>
     
@@ -63,6 +64,7 @@
       
     
     </summary>
+    
     
       <category term="cakephp" scheme="http://bravo-kernel.com/categories/cakephp/"/>
     
@@ -101,6 +103,7 @@ and will show you
     
     </summary>
     
+    
       <category term="sysop" scheme="http://bravo-kernel.com/categories/sysop/"/>
     
     
@@ -137,6 +140,7 @@ and will show you
     
     </summary>
     
+    
       <category term="CakePHP" scheme="http://bravo-kernel.com/categories/cakephp/"/>
     
     
@@ -171,6 +175,7 @@ aligned  multiline labels (using either plain CSS or
     
     </summary>
     
+    
       <category term="css" scheme="http://bravo-kernel.com/categories/css/"/>
     
     
@@ -198,6 +203,7 @@ aligned  multiline labels (using either plain CSS or
       
     
     </summary>
+    
     
       <category term="Debian" scheme="http://bravo-kernel.com/categories/debian/"/>
     
@@ -227,6 +233,7 @@ aligned  multiline labels (using either plain CSS or
     
     </summary>
     
+    
       <category term="elm" scheme="http://bravo-kernel.com/categories/elm/"/>
     
     
@@ -254,6 +261,7 @@ aligned  multiline labels (using either plain CSS or
       
     
     </summary>
+    
     
       <category term="cakephp" scheme="http://bravo-kernel.com/categories/cakephp/"/>
     
@@ -289,6 +297,7 @@ specific country.&lt;/p&gt;
     
     </summary>
     
+    
       <category term="Microsoft" scheme="http://bravo-kernel.com/categories/microsoft/"/>
     
     
@@ -303,9 +312,9 @@ specific country.&lt;/p&gt;
     <link href="http://bravo-kernel.com/2015/10/setting-up-hexo-on-windows/"/>
     <id>http://bravo-kernel.com/2015/10/setting-up-hexo-on-windows/</id>
     <published>2015-10-11T13:45:43.000Z</published>
-    <updated>2018-03-14T21:52:49.454Z</updated>
+    <updated>2020-01-07T19:42:17.182Z</updated>
     
-    <content type="html"><![CDATA[<p>Follow these instructions to install and configure the<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo blog framework</a> on Windows.</p><h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ul><li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git Bash</a></li></ul><h2 id="Installing-Node-js"><a href="#Installing-Node-js" class="headerlink" title="Installing Node.js"></a>Installing Node.js</h2><ol><li><p>Install Node.js</p><p> <img src="node-js-installer.png" alt="Node.js Windows Installer"></p></li><li><p>Make sure to allow Node.js Windows Firewall access.</p><p> <img src="windows-firewall.png" alt="Windows Firewall access"></p></li><li><p>Verify the installation by running the following commandsinside the Git Bash:</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></li></ol><h2 id="Re-installing-hexo"><a href="#Re-installing-hexo" class="headerlink" title="Re-installing hexo"></a>Re-installing hexo</h2><p>For those re-installing Hexo from an existing hexo blog repository:</p><ol><li>do NOT create the directory described step 1 but checkout your blog repo instead</li><li>cd into your repo directory and git checkout the <code>source</code> branch</li><li>continue with step 2 below but SKIP the <code>hexo init</code> command</li></ol><h2 id="Installing-hexo"><a href="#Installing-hexo" class="headerlink" title="Installing hexo"></a>Installing hexo</h2><p>Please note that all commands are to be executed within the Git Bash.</p><ol><li><p>Create a new directory that will hold your blog</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br></pre></td></tr></table></figure></li><li><p>Install the hexo framework and the git deployer</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure></li><li><p>Initialize your blog</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">hexo serve</span><br></pre></td></tr></table></figure></li><li><p>Now browse to <code>http://localhost:4000</code> and enjoy your first blog</p></li><li><p>You’re good to go, next steps would be:</p><ul><li>customizing <code>_config.yml</code> to your likings</li><li>creating your first post by running <code>hexo new</code></li></ul></li></ol><h2 id="Deploying"><a href="#Deploying" class="headerlink" title="Deploying"></a>Deploying</h2><p>The hexo git deployer has taken all the hard work out of deploying yourblog to your master repo.</p><ol><li><p>First load your Github private key inside the Git Bash</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> `ssh-agent`</span><br><span class="line">ssh-add ~/.ssh/github_rsa_key</span><br></pre></td></tr></table></figure></li><li><p>Now simply generate and deploy your blog</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate -d</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>Follow these instructions to install and configure the<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo blog framework</a> on Windows.</p><h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ul><li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git Bash</a></li></ul><h2 id="1-Install-Node-js"><a href="#1-Install-Node-js" class="headerlink" title="1. Install Node.js"></a>1. Install Node.js</h2><ol><li><p>Install Node.js</p><p> <img src="node-js-installer.png" alt="Node.js Windows Installer"></p></li><li><p>Make sure to allow Node.js Windows Firewall access.</p><p> <img src="windows-firewall.png" alt="Windows Firewall access"></p></li><li><p>Verify the installation by running the following commandsinside the Git Bash:</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></li></ol><h2 id="2a-Re-install-hexo"><a href="#2a-Re-install-hexo" class="headerlink" title="2a. Re-install hexo"></a>2a. Re-install hexo</h2><p>For those re-installing Hexo from an existing hexo blog repository:</p><ol><li>do NOT create the directory described step 1 but checkout your blog repo instead</li><li>cd into your repo directory and git checkout the <code>source</code> branch</li><li>continue with step 2 below but SKIP the <code>hexo init</code> command</li></ol><h2 id="2b-Install-Fresh-Hexo"><a href="#2b-Install-Fresh-Hexo" class="headerlink" title="2b. Install Fresh Hexo"></a>2b. Install Fresh Hexo</h2><p>Please note that all commands are to be executed within the Git Bash.</p><ol><li><p>Create a new directory that will hold your blog</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br></pre></td></tr></table></figure></li><li><p>Install the hexo framework and the git deployer</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure></li><li><p>Initialize your blog</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">hexo serve</span><br></pre></td></tr></table></figure></li><li><p>Now browse to <code>http://localhost:4000</code> and enjoy your first blog</p></li><li><p>You’re good to go, next steps would be:</p><ul><li>customizing <code>_config.yml</code> to your likings</li><li>creating your first post by running <code>hexo new</code></li></ul></li></ol><h2 id="3-Deploy"><a href="#3-Deploy" class="headerlink" title="3. Deploy"></a>3. Deploy</h2><p>The hexo git deployer has taken all the hard work out of deploying yourblog to your master repo.</p><ol><li><p>First load your Github private key inside the Git Bash</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> `ssh-agent`</span><br><span class="line">ssh-add ~/.ssh/github_rsa_key</span><br></pre></td></tr></table></figure></li><li><p>Now simply generate and deploy your blog</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate -d</span><br></pre></td></tr></table></figure></li></ol><h2 id="4-Save-Local-Changes"><a href="#4-Save-Local-Changes" class="headerlink" title="4. Save Local Changes"></a>4. Save Local Changes</h2><p><strong>Do not forget</strong> to save your local changes by commit pushing them to the <code>source</code> branch of your central repository.</p>]]></content>
     
     <summary type="html">
     
@@ -316,6 +325,7 @@ specific country.&lt;/p&gt;
       
     
     </summary>
+    
     
       <category term="Web" scheme="http://bravo-kernel.com/categories/web/"/>
     
@@ -348,6 +358,7 @@ specific country.&lt;/p&gt;
     
     </summary>
     
+    
       <category term="Microsoft" scheme="http://bravo-kernel.com/categories/microsoft/"/>
     
     
@@ -375,6 +386,7 @@ specific country.&lt;/p&gt;
       
     
     </summary>
+    
     
       <category term="Microsoft" scheme="http://bravo-kernel.com/categories/microsoft/"/>
     
@@ -404,6 +416,7 @@ specific country.&lt;/p&gt;
     
     </summary>
     
+    
       <category term="Minecraft" scheme="http://bravo-kernel.com/categories/minecraft/"/>
     
     
@@ -432,6 +445,7 @@ we wi
       
     
     </summary>
+    
     
       <category term="CakePHP" scheme="http://bravo-kernel.com/categories/cakephp/"/>
     
@@ -471,6 +485,7 @@ we will implement a
     
     </summary>
     
+    
       <category term="CakePHP" scheme="http://bravo-kernel.com/categories/cakephp/"/>
     
     
@@ -503,6 +518,7 @@ we will implement a
     
     </summary>
     
+    
       <category term="CakePHP" scheme="http://bravo-kernel.com/categories/cakephp/"/>
     
     
@@ -534,6 +550,7 @@ we will implement a
       
     
     </summary>
+    
     
       <category term="CakePHP" scheme="http://bravo-kernel.com/categories/cakephp/"/>
     
@@ -570,6 +587,7 @@ we will implement a
     
     </summary>
     
+    
       <category term="Git" scheme="http://bravo-kernel.com/categories/git/"/>
     
     
@@ -597,6 +615,7 @@ we will implement a
       
     
     </summary>
+    
     
       <category term="Sysop" scheme="http://bravo-kernel.com/categories/sysop/"/>
     
@@ -626,6 +645,7 @@ we will implement a
       
     
     </summary>
+    
     
       <category term="Sysop" scheme="http://bravo-kernel.com/categories/sysop/"/>
     
