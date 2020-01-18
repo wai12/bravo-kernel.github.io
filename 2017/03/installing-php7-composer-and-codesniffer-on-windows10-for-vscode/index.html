@@ -7,8 +7,8 @@
   <meta name="author" content="bravo-kernel">
   
   <meta name="description" content="This post will guide you through clean (non-polluting) Windows 10 installations
-of PHP 7, Composer and PHP CodeSniffer 
-and will show you how to integ">
+of PHP 7, Composer and PHP CodeSniffer
+and will show you how to integr">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -70,7 +70,7 @@ and will show you how to integ">
         <div class="icon"></div>
         <time datetime="2017-03-12T17:00:00.000Z"><a href="/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/">Mar 12 2017</a></time>
 		
-			<span class="updated" title="Post Updated"><span>Mar 14 2018</span></span>
+			<span class="updated" title="Post Updated"><span>Jan 18 2020</span></span>
         
 		<div class="github-improve"><a href="https://github.com/bravo-kernel/bravo-kernel.github.io/tree/source/source/_posts/2017-03-12-installing-php7-composer-and-codesniffer-on-windows10-for-vscode.md" target="_blank" rel="noopener">Improve on Github</a></div>
       
@@ -83,11 +83,11 @@ and will show you how to integ">
     <div class="entry">
       
         <p>This post will guide you through clean (non-polluting) Windows 10 installations
-of PHP 7, Composer and PHP CodeSniffer 
+of PHP 7, Composer and PHP CodeSniffer
 and will show you how to integrate it all with Visual Studio Code as a bonus.</p>
-<h2 id="1-Installing-PHP"><a href="#1-Installing-PHP" class="headerlink" title="1. Installing PHP"></a>1. Installing PHP</h2><p><a href="http://windows.php.net/download" target="_blank" rel="noopener">Download</a> one of the PHP binaries suitable for your system 
-(this post will use
-<a href="http://windows.php.net/downloads/releases/php-7.1.2-nts-Win32-VC14-x64.zip" target="_blank" rel="noopener">the 64-bit Thread Safe version of PHP 7.1.2</a>) and:</p>
+<h2 id="1-Installing-PHP"><a href="#1-Installing-PHP" class="headerlink" title="1. Installing PHP"></a>1. Installing PHP</h2><p>First <a href="http://windows.php.net/download" target="_blank" rel="noopener">download</a> one of the PHP binaries suitable for your system (
+we used the 64-bit Thread Safe version of PHP 7.1.2 when creating this post but any version will do).</p>
+<p>Next:</p>
 <ul>
 <li>extract the downloaded zip file</li>
 <li>rename the resultant directory to <code>php-x64</code></li>
@@ -98,12 +98,15 @@ and will show you how to integrate it all with Visual Studio Code as a bonus.</p
 later on so we might as well enable it right now by opening a
 Command Prompt (with elevated admin permissions) and running:</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> "C:\Program Files\php-x64"</span><br><span class="line">cp php.ini-production php.ini</span><br></pre></td></tr></table></figure>
+
 <p>Close the Command Prompt and open <code>&quot;C:\Program Files\php-x64\php.ini&quot;</code> with
 your editor to uncomment the following lines:</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">extension_dir</span> = <span class="string">"ext"</span></span><br><span class="line"><span class="attr">extension</span>=php_openssl.dll</span><br></pre></td></tr></table></figure>
+
 <h2 id="2-Installing-Composer"><a href="#2-Installing-Composer" class="headerlink" title="2. Installing Composer"></a>2. Installing Composer</h2><p>Download and run the Composer <a href="https://getcomposer.org/download/" target="_blank" rel="noopener">Windows installer</a>.</p>
 <p>Make sure that the installer detects your PHP installation before completing the installation:</p>
-<img src="/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/composer-install-verify-php-detection.png" title="Screenshot of Composer installation detecting PHP">
+<img src="/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/composer-install-verify-php-detection.png" class="" title="Screenshot of Composer installation detecting PHP">
+
 <p>Good to know:</p>
 <ul>
 <li>the composer binary is found in <code>&quot;C:\ProgramData\ComposerSetup\bin&quot;</code></li>
@@ -122,7 +125,7 @@ so we change it.</p>
 <li><p>Select <code>Environmental variables</code></p>
 </li>
 <li><p>Under <code>System Variables</code>, press <code>New</code> and enter the following settings:</p>
-<img src="/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/composer-global-install-path-env.png" title="Screenshot of new system variable">
+<img src="/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/composer-global-install-path-env.png" class="" title="Screenshot of new system variable">
 </li>
 <li><p>Select <code>OK</code> to round up this step</p>
 </li>
@@ -139,10 +142,10 @@ variable.</p>
 </li>
 <li><p>Under <code>System Variables</code>, select existing <code>Path</code> variable</p>
 </li>
-<li><p>Select <code>Edit</code> </p>
+<li><p>Select <code>Edit</code></p>
 </li>
 <li><p>Select <code>New</code> and enter <code>C:\Program Files\php-x64\composer\vendor\bin</code> like shown below:</p>
-<img src="/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/composer-global-vendor-bin-path-env.png" title="Screenshot of editing existing PATH system variable">
+<img src="/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/composer-global-vendor-bin-path-env.png" class="" title="Screenshot of editing existing PATH system variable">
 </li>
 <li><p>Press <code>OK</code> trice to apply the setting</p>
 </li>
@@ -151,19 +154,23 @@ variable.</p>
 be aware of the new environment variable.</p>
 <h2 id="3-Installing-PHP-CodeSniffer"><a href="#3-Installing-PHP-CodeSniffer" class="headerlink" title="3. Installing PHP_CodeSniffer"></a>3. Installing PHP_CodeSniffer</h2><p>Open a Command Prompt (without elevated permissions) and run:</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">composer global require "squizlabs/php_codesniffer=*"</span><br><span class="line">phpcs --version</span><br></pre></td></tr></table></figure>
+
 <h2 id="4-Installing-additional-Coding-Standards"><a href="#4-Installing-additional-Coding-Standards" class="headerlink" title="4. Installing additional Coding Standards"></a>4. Installing additional Coding Standards</h2><p>Installation instructions will differ per additional coding standard
 so we will just use <a href="https://github.com/cakephp/cakephp-codesniffer" target="_blank" rel="noopener">cakephp-codesniffer</a>
 as an example here.</p>
 <p>Open your global <code>C:\Program Files\php-x64\composer\composer.json</code> file and manually add
 the cakephp-sniffer package so it looks like this:</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"require"</span>: &#123;</span><br><span class="line">        <span class="attr">"squizlabs/php_codesniffer"</span>: <span class="string">"*"</span>,</span><br><span class="line">        <span class="attr">"cakephp/cakephp-codesniffer"</span>: <span class="string">"2.*"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>Now open a Command Prompt (without elevated permissions) and run the following
 commands to install the coding standard and make the path known to phcs:</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">composer global update</span><br><span class="line">phpcs --config-<span class="built_in">set</span> installed_paths "C:\Program Files\php-x64\composer\vendor\cakephp\cakephp-codesniffer"</span><br><span class="line">phpcs --config-show</span><br></pre></td></tr></table></figure>
-<p>There is no need to configure the default coding standard as this will be handled on a 
+
+<p>There is no need to configure the default coding standard as this will be handled on a
 per-project basis inside Visual Studio Code but you are free to do so anyways by
 running:</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phpcs --config-<span class="built_in">set</span> default_standard CakePHP</span><br></pre></td></tr></table></figure>
+
 <p><em>FYI: all Sniffer settings also in C:\Program Files\php-x64\composer\vendor\squizlabs\php_codesniffer\CodeSniffer.conf</em></p>
 <h2 id="5-Reboot-your-computer"><a href="#5-Reboot-your-computer" class="headerlink" title="5. Reboot your computer"></a>5. Reboot your computer</h2><p>To be absolutely sure all programs and services are aware of the new environment
 variables you should now reboot your computer. <strong>If you are not using Visual Studio
@@ -182,7 +189,7 @@ that allows you to lint <code>composer.json</code> files. To set it up:</p>
 </li>
 <li><p>Reload the window by clicking that blue button to activate the plugin</p>
 </li>
-<li><p>Open the settings window (File &gt; Preferences &gt; Settings) </p>
+<li><p>Open the settings window (File &gt; Preferences &gt; Settings)</p>
 </li>
 <li><p>Add the following line to the <code>USER SETTINGS</code> section:</p>
 <p><code>&quot;composer.executablePath&quot;: &quot;c:\\ProgramData\\ComposerSetup\\bin\\composer.bat&quot;</code></p>
@@ -199,6 +206,7 @@ that allows you to lint <code>composer.json</code> files. To set it up:</p>
 <li><p>Select <code>Composer: Validate</code> and pressing enter</p>
 </li>
 <li><p>If things went well you should see something like this:</p>
+
 
 </li>
 </ul>
@@ -243,6 +251,7 @@ basically requiring you to enable it on a per project/VSCode workspace basis.</p
 </li>
 <li><p>Add the following lines to the <code>WORKSPACE SETTINGS</code> section:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"phpcs.enable": true,</span><br><span class="line">"phpcs.standard": "CakePHP",</span><br><span class="line">"phpcs.ignore": "config, webroot"</span><br></pre></td></tr></table></figure>
+
 <p><em>Please note that the ignore part is optional and that non-existing directories/files will cause errors.</em></p>
 </li>
 </ol>
@@ -257,10 +266,10 @@ basically requiring you to enable it on a per project/VSCode workspace basis.</p
 <li><p>Save the file (realtime sniffing not supported yet)</p>
 </li>
 <li><p>You should see a red tilde (<code>~</code>) explaining the sniff violation when hovered:</p>
-<img src="/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/vscode-phpcs-hover-tilde.png" title="Screenshot of phpcs violation when hovering tilde">
+<img src="/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/vscode-phpcs-hover-tilde.png" class="" title="Screenshot of phpcs violation when hovering tilde">
 </li>
 <li><p>The <code>Problems</code> window (View &gt; Problems) should display a summary of all phpcs violations:</p>
-<img src="/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/vscode-phpcs-problems-output.png" title="Screenshot of VSCode Problems window listing phpcs violations">
+<img src="/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/vscode-phpcs-problems-output.png" class="" title="Screenshot of VSCode Problems window listing phpcs violations">
 </li>
 </ol>
 
