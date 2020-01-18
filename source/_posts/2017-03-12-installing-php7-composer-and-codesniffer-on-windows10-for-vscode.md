@@ -12,14 +12,15 @@ categories:
 ---
 
 This post will guide you through clean (non-polluting) Windows 10 installations
-of PHP 7, Composer and PHP CodeSniffer 
+of PHP 7, Composer and PHP CodeSniffer
 and will show you how to integrate it all with Visual Studio Code as a bonus.
 
 ## 1. Installing PHP
 
-[Download](http://windows.php.net/download) one of the PHP binaries suitable for your system 
-(this post will use
-[the 64-bit Thread Safe version of PHP 7.1.2](http://windows.php.net/downloads/releases/php-7.1.2-nts-Win32-VC14-x64.zip)) and:
+First [download](http://windows.php.net/download) one of the PHP binaries suitable for your system
+(we used the 64-bit Thread Safe version of PHP 7.1.2 when creating this post but any version will do).
+
+Next:
 
 - extract the downloaded zip file
 - rename the resultant directory to `php-x64`
@@ -93,7 +94,7 @@ variable.
 
 4. Under `System Variables`, select existing `Path` variable
 
-5. Select `Edit` 
+5. Select `Edit`
 
 6. Select `New` and enter `C:\Program Files\php-x64\composer\vendor\bin` like shown below:
 
@@ -133,14 +134,14 @@ the cakephp-sniffer package so it looks like this:
 
 Now open a Command Prompt (without elevated permissions) and run the following
 commands to install the coding standard and make the path known to phcs:
- 
+
 ```cmd
 composer global update
 phpcs --config-set installed_paths "C:\Program Files\php-x64\composer\vendor\cakephp\cakephp-codesniffer"
 phpcs --config-show
 ```
 
-There is no need to configure the default coding standard as this will be handled on a 
+There is no need to configure the default coding standard as this will be handled on a
 per-project basis inside Visual Studio Code but you are free to do so anyways by
 running:
 
@@ -172,7 +173,7 @@ that allows you to lint `composer.json` files. To set it up:
 
 5. Reload the window by clicking that blue button to activate the plugin
 
-6. Open the settings window (File > Preferences > Settings) 
+6. Open the settings window (File > Preferences > Settings)
 
 7. Add the following line to the `USER SETTINGS` section:
 
