@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bravo-kernel.com/"/>
-  <updated>2020-01-11T09:59:11.199Z</updated>
+  <updated>2020-02-14T15:02:50.469Z</updated>
   <id>http://bravo-kernel.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows Terminal Error creating winpty: ConnectNamedPipe failed: Windows error 232</title>
+    <link href="http://bravo-kernel.com/2020/02/windows-terminal-error-creating-winpty-connectnamedpipe-failed-windows-error-232/"/>
+    <id>http://bravo-kernel.com/2020/02/windows-terminal-error-creating-winpty-connectnamedpipe-failed-windows-error-232/</id>
+    <published>2020-02-14T14:46:43.000Z</published>
+    <updated>2020-02-14T15:02:50.469Z</updated>
+    
+    <content type="html"><![CDATA[<p>Simply exclude the following file in your antivirus software if you are using Git Bash (inside Windows Terminal) on Windows and are seeing above error message.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Git\usr\bin\winpty-agent.exe</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Simply exclude the following file in your antivirus software if you are using Git Bash (inside Windows Terminal) on Windows and are seein
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://bravo-kernel.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://bravo-kernel.com/tags/git/"/>
+    
+      <category term="terminal" scheme="http://bravo-kernel.com/tags/terminal/"/>
+    
+  </entry>
   
   <entry>
     <title>Creating a scheduled Broken Links Checker using Github Actions</title>
@@ -620,37 +648,6 @@ we will implement a
       <category term="git" scheme="http://bravo-kernel.com/tags/git/"/>
     
       <category term="github" scheme="http://bravo-kernel.com/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Setting up Logstash 1.4.2 to forward Nginx logs to Elasticsearch</title>
-    <link href="http://bravo-kernel.com/2014/12/setting-up-logstash-1-4-2-to-forward-nginx-logs-to-elasticsearch/"/>
-    <id>http://bravo-kernel.com/2014/12/setting-up-logstash-1-4-2-to-forward-nginx-logs-to-elasticsearch/</id>
-    <published>2014-12-21T13:13:25.000Z</published>
-    <updated>2018-03-14T21:47:50.075Z</updated>
-    
-    <content type="html"><![CDATA[<p>Step-by-step instructions on how to configure Logstash v1.4.2 to forward your Nginx access logs to Elasticsearch v1.4.2.</p><h2 id="Create-a-custom-Nginx-log-format"><a href="#Create-a-custom-Nginx-log-format" class="headerlink" title="Create a custom Nginx log format"></a>Create a custom Nginx log format</h2><p>Add the following custom log_format to the <em>/etc/nginx/conf.d</em> file so it becomes available to all (virtual) Nginx hosts: </p><pre><code># Custom logstash formatlog_format logstash &apos;$http_host &apos;                    &apos;$remote_addr [$time_local] &apos;                    &apos;&quot;$request&quot; $status $body_bytes_sent &apos;                    &apos;&quot;$http_referer&quot; &quot;$http_user_agent&quot; &apos;                    &apos;$request_time &apos;                    &apos;$upstream_response_time&apos;;</code></pre><blockquote><p>Make sure to add this <strong>above</strong> the “# virtual hosting” directive to prevent nginx failing with “unkown log format” errors.</p></blockquote><h2 id="Enable-the-custom-Nginx-log-format"><a href="#Enable-the-custom-Nginx-log-format" class="headerlink" title="Enable the custom Nginx log format"></a>Enable the custom Nginx log format</h2><p>Update your nginx site configuration file(s) to start logging with the new custom log_format:</p><pre><code>#access_log /var/log/nginx/access.log;access_log /var/log/nginx/access.log logstash;</code></pre><p>Restart nginx. </p><p>Check your access log(s) and confirm that entries no longer look like the first line below (default nginx format) but look similar to second one (using our custom logstash format):</p><pre><code>10.33.10.1 - - [21/Dec/2014:14:36:25 +0000] &quot;GET /test_126 HTTP/1.1&quot; 404 6642 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.3; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0&quot;my.app 10.33.10.1 [21/Dec/2014:13:58:48 +0000] &quot;GET /test_126 HTTP/1.1&quot; 404 6641 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.3; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0&quot; 2.465 2.465</code></pre><h2 id="Create-a-Logstash-nginx-pattern"><a href="#Create-a-Logstash-nginx-pattern" class="headerlink" title="Create a Logstash nginx pattern"></a>Create a Logstash nginx pattern</h2><p>Create new file <em>/opt/logstash/server/patterns/nginx</em> with:</p><pre><code>NGUSERNAME [a-zA-Z\.\@\-\+_%]+NGUSER %{NGUSERNAME}NGINXACCESS %{IPORHOST:http_host} %{IPORHOST:clientip} \[%{HTTPDATE:timestamp}\] \&quot;(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\&quot; %{NUMBER:response} (?:%{NUMBER:bytes}|-) %{QS:referrer} %{QS:agent} %{NUMBER:request_time:float} %{NUMBER:upstream_time:float}NGINXACCESS %{IPORHOST:http_host} %{IPORHOST:clientip} \[%{HTTPDATE:timestamp}\] \&quot;(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\&quot; %{NUMBER:response} (?:%{NUMBER:bytes}|-) %{QS:referrer} %{QS:agent} %{NUMBER:request_time:float}    </code></pre><p><strong>Notes:</strong></p><ul><li>by creating a pattern we keep our our logstash filters clean (simply referencing the pattern)</li><li>the first rule catches requests that are sent upstream</li><li>the second rule catches all static requests (where no upstream_response_time is available)</li></ul><blockquote><p>Pro tip: use the online <a href="https://grokdebug.herokuapp.com" target="_blank" rel="noopener">Grok Debugger</a> if you need to test/develop patterns.</p></blockquote><h2 id="Create-a-Logstash-configuration-file"><a href="#Create-a-Logstash-configuration-file" class="headerlink" title="Create a Logstash configuration file"></a>Create a Logstash configuration file</h2><p>Create new file <em>/opt/logstash/server/etc/conf.d/nginx.conf</em> with:</p><pre><code>input {  file {    path =&gt; &quot;/var/log/nginx/*access*&quot;  }}filter {  mutate { replace =&gt; { &quot;type&quot; =&gt; &quot;nginx_access&quot; } }  grok {    match =&gt; { &quot;message&quot; =&gt; &quot;%{NGINXACCESS}&quot; }  }  date {    match =&gt; [ &quot;timestamp&quot; , &quot;dd/MMM/YYYY:HH:mm:ss Z&quot; ]  }  geoip {    source =&gt; &quot;clientip&quot;  }}output {  elasticsearch {    host =&gt; &quot;localhost&quot;    protocol =&gt; &quot;http&quot;  }  stdout { codec =&gt; rubydebug }}</code></pre><p><strong>Notes:</strong></p><ul><li>we change the timestamp to use the time the request arrived at the nginx server (instead of using the default which is the time the event was written to log, which is after the request has been processed)</li><li>all logentries will be indexed using Elasticsearch type “nginx_access”</li><li>we do NOT use the “index” directive in our output, all logentries will use Elasticsearch index “logstash-%{+YYYY.MM.dd}”</li></ul><blockquote><p>We MUST use the http protocol. By default Logstash will use the “node” protocol which joins Logstash as a participating node to the Elasticsearch cluster using it’s embedded ES library. Since that embedded version (1.1.1) is currently incompatible with version 1.4.2 it will cause issues all over the place like breaking Kibana due to incompatible nodes etc.</p></blockquote><h2 id="Start-logging-to-Elasticsearch"><a href="#Start-logging-to-Elasticsearch" class="headerlink" title="Start logging to Elasticsearch"></a>Start logging to Elasticsearch</h2><p>Manually test your new Logstash configuration by running:</p><pre><code>/opt/logstash/server/bin/logstash -f /opt/logstash/server/etc/conf.d/nginx.conf</code></pre><p>If your logs are appearing in Elasticsearch restart your logstash service. </p><h2 id="Credits"><a href="#Credits" class="headerlink" title="Credits"></a>Credits</h2><p>Hat-tip to <a href="http://tech.ftbpro.com/post/92330141601/getting-the-best-out-of-logstash-for-nginx" target="_blank" rel="noopener">FTBpro developers</a> for the inspiration and the Logstash pattern</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Step-by-step instructions on how to configure Logstash v1.4.2 to forward your Nginx access logs to Elasticsearch v1.4.2.&lt;/p&gt;
-&lt;h2 id=&quot;Crea
-      
-    
-    </summary>
-    
-    
-      <category term="Sysop" scheme="http://bravo-kernel.com/categories/sysop/"/>
-    
-    
-      <category term="nginx" scheme="http://bravo-kernel.com/tags/nginx/"/>
-    
-      <category term="logstash" scheme="http://bravo-kernel.com/tags/logstash/"/>
-    
-      <category term="elasticsearch" scheme="http://bravo-kernel.com/tags/elasticsearch/"/>
     
   </entry>
   
