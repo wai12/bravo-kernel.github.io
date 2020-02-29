@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://bravo-kernel.com/"/>
+  <link href="https://bravo-kernel.com/"/>
   <updated>2020-02-14T15:02:50.469Z</updated>
-  <id>http://bravo-kernel.com/</id>
+  <id>https://bravo-kernel.com/</id>
   
   <author>
     <name>bravo-kernel</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Windows Terminal Error creating winpty: ConnectNamedPipe failed: Windows error 232</title>
-    <link href="http://bravo-kernel.com/2020/02/windows-terminal-error-creating-winpty-connectnamedpipe-failed-windows-error-232/"/>
-    <id>http://bravo-kernel.com/2020/02/windows-terminal-error-creating-winpty-connectnamedpipe-failed-windows-error-232/</id>
+    <link href="https://bravo-kernel.com/2020/02/windows-terminal-error-creating-winpty-connectnamedpipe-failed-windows-error-232/"/>
+    <id>https://bravo-kernel.com/2020/02/windows-terminal-error-creating-winpty-connectnamedpipe-failed-windows-error-232/</id>
     <published>2020-02-14T14:46:43.000Z</published>
     <updated>2020-02-14T15:02:50.469Z</updated>
     
@@ -35,19 +35,19 @@
     </summary>
     
     
-      <category term="Git" scheme="http://bravo-kernel.com/categories/git/"/>
+      <category term="Git" scheme="https://bravo-kernel.com/categories/git/"/>
     
     
-      <category term="git" scheme="http://bravo-kernel.com/tags/git/"/>
+      <category term="git" scheme="https://bravo-kernel.com/tags/git/"/>
     
-      <category term="terminal" scheme="http://bravo-kernel.com/tags/terminal/"/>
+      <category term="terminal" scheme="https://bravo-kernel.com/tags/terminal/"/>
     
   </entry>
   
   <entry>
     <title>Creating a scheduled Broken Links Checker using Github Actions</title>
-    <link href="http://bravo-kernel.com/2020/01/creating-a-scheduled-broken-links-checker-using-github-actions/"/>
-    <id>http://bravo-kernel.com/2020/01/creating-a-scheduled-broken-links-checker-using-github-actions/</id>
+    <link href="https://bravo-kernel.com/2020/01/creating-a-scheduled-broken-links-checker-using-github-actions/"/>
+    <id>https://bravo-kernel.com/2020/01/creating-a-scheduled-broken-links-checker-using-github-actions/</id>
     <published>2020-01-10T08:19:00.000Z</published>
     <updated>2020-01-11T09:59:11.199Z</updated>
     
@@ -63,17 +63,17 @@
     </summary>
     
     
-      <category term="ci" scheme="http://bravo-kernel.com/categories/ci/"/>
+      <category term="ci" scheme="https://bravo-kernel.com/categories/ci/"/>
     
     
-      <category term="github-actions" scheme="http://bravo-kernel.com/tags/github-actions/"/>
+      <category term="github-actions" scheme="https://bravo-kernel.com/tags/github-actions/"/>
     
   </entry>
   
   <entry>
     <title>How to install Powershell Core on Ubuntu</title>
-    <link href="http://bravo-kernel.com/2018/03/how-to-install-powershell-core-on-ubuntu/"/>
-    <id>http://bravo-kernel.com/2018/03/how-to-install-powershell-core-on-ubuntu/</id>
+    <link href="https://bravo-kernel.com/2018/03/how-to-install-powershell-core-on-ubuntu/"/>
+    <id>https://bravo-kernel.com/2018/03/how-to-install-powershell-core-on-ubuntu/</id>
     <published>2018-03-24T17:00:00.000Z</published>
     <updated>2018-03-24T18:44:45.953Z</updated>
     
@@ -90,21 +90,21 @@
     </summary>
     
     
-      <category term="devops" scheme="http://bravo-kernel.com/categories/devops/"/>
+      <category term="devops" scheme="https://bravo-kernel.com/categories/devops/"/>
     
     
-      <category term="ubuntu" scheme="http://bravo-kernel.com/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="https://bravo-kernel.com/tags/ubuntu/"/>
     
-      <category term="powershell" scheme="http://bravo-kernel.com/tags/powershell/"/>
+      <category term="powershell" scheme="https://bravo-kernel.com/tags/powershell/"/>
     
-      <category term="powershell-core" scheme="http://bravo-kernel.com/tags/powershell-core/"/>
+      <category term="powershell-core" scheme="https://bravo-kernel.com/tags/powershell-core/"/>
     
   </entry>
   
   <entry>
     <title>How to use a CakePHP API as the data backend for Ember in 30 minutes</title>
-    <link href="http://bravo-kernel.com/2017/03/how-to-use-a-cakephp-api-as-the-data-backend-for-ember-in-30-minutes/"/>
-    <id>http://bravo-kernel.com/2017/03/how-to-use-a-cakephp-api-as-the-data-backend-for-ember-in-30-minutes/</id>
+    <link href="https://bravo-kernel.com/2017/03/how-to-use-a-cakephp-api-as-the-data-backend-for-ember-in-30-minutes/"/>
+    <id>https://bravo-kernel.com/2017/03/how-to-use-a-cakephp-api-as-the-data-backend-for-ember-in-30-minutes/</id>
     <published>2017-03-13T17:00:00.000Z</published>
     <updated>2018-03-24T18:43:17.637Z</updated>
     
@@ -120,27 +120,27 @@
     </summary>
     
     
-      <category term="cakephp" scheme="http://bravo-kernel.com/categories/cakephp/"/>
+      <category term="cakephp" scheme="https://bravo-kernel.com/categories/cakephp/"/>
     
     
-      <category term="cakephp" scheme="http://bravo-kernel.com/tags/cakephp/"/>
+      <category term="cakephp" scheme="https://bravo-kernel.com/tags/cakephp/"/>
     
-      <category term="api" scheme="http://bravo-kernel.com/tags/api/"/>
+      <category term="api" scheme="https://bravo-kernel.com/tags/api/"/>
     
-      <category term="ember" scheme="http://bravo-kernel.com/tags/ember/"/>
+      <category term="ember" scheme="https://bravo-kernel.com/tags/ember/"/>
     
-      <category term="emberjs" scheme="http://bravo-kernel.com/tags/emberjs/"/>
+      <category term="emberjs" scheme="https://bravo-kernel.com/tags/emberjs/"/>
     
-      <category term="jsonapi" scheme="http://bravo-kernel.com/tags/jsonapi/"/>
+      <category term="jsonapi" scheme="https://bravo-kernel.com/tags/jsonapi/"/>
     
-      <category term="crud" scheme="http://bravo-kernel.com/tags/crud/"/>
+      <category term="crud" scheme="https://bravo-kernel.com/tags/crud/"/>
     
   </entry>
   
   <entry>
     <title>Installing PHP7, Composer and CodeSniffer on Windows 10 (for VSCode)</title>
-    <link href="http://bravo-kernel.com/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/"/>
-    <id>http://bravo-kernel.com/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/</id>
+    <link href="https://bravo-kernel.com/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/"/>
+    <id>https://bravo-kernel.com/2017/03/installing-php7-composer-and-codesniffer-on-windows10-for-vscode/</id>
     <published>2017-03-12T17:00:00.000Z</published>
     <updated>2020-01-18T13:04:50.768Z</updated>
     
@@ -158,27 +158,27 @@ and will show you
     </summary>
     
     
-      <category term="sysop" scheme="http://bravo-kernel.com/categories/sysop/"/>
+      <category term="sysop" scheme="https://bravo-kernel.com/categories/sysop/"/>
     
     
-      <category term="cakephp" scheme="http://bravo-kernel.com/tags/cakephp/"/>
+      <category term="cakephp" scheme="https://bravo-kernel.com/tags/cakephp/"/>
     
-      <category term="composer" scheme="http://bravo-kernel.com/tags/composer/"/>
+      <category term="composer" scheme="https://bravo-kernel.com/tags/composer/"/>
     
-      <category term="phpcs" scheme="http://bravo-kernel.com/tags/phpcs/"/>
+      <category term="phpcs" scheme="https://bravo-kernel.com/tags/phpcs/"/>
     
-      <category term="windows10" scheme="http://bravo-kernel.com/tags/windows10/"/>
+      <category term="windows10" scheme="https://bravo-kernel.com/tags/windows10/"/>
     
-      <category term="sysop" scheme="http://bravo-kernel.com/tags/sysop/"/>
+      <category term="sysop" scheme="https://bravo-kernel.com/tags/sysop/"/>
     
-      <category term="vscode" scheme="http://bravo-kernel.com/tags/vscode/"/>
+      <category term="vscode" scheme="https://bravo-kernel.com/tags/vscode/"/>
     
   </entry>
   
   <entry>
     <title>How to make your CakePHP 3 API produce JSON API</title>
-    <link href="http://bravo-kernel.com/2017/03/how-to-make-your-cakephp-3-api-produce-jsonapi/"/>
-    <id>http://bravo-kernel.com/2017/03/how-to-make-your-cakephp-3-api-produce-jsonapi/</id>
+    <link href="https://bravo-kernel.com/2017/03/how-to-make-your-cakephp-3-api-produce-jsonapi/"/>
+    <id>https://bravo-kernel.com/2017/03/how-to-make-your-cakephp-3-api-produce-jsonapi/</id>
     <published>2017-03-10T19:10:24.000Z</published>
     <updated>2018-03-23T16:41:52.045Z</updated>
     
@@ -195,25 +195,25 @@ and will show you
     </summary>
     
     
-      <category term="CakePHP" scheme="http://bravo-kernel.com/categories/cakephp/"/>
+      <category term="CakePHP" scheme="https://bravo-kernel.com/categories/cakephp/"/>
     
     
-      <category term="cakephp" scheme="http://bravo-kernel.com/tags/cakephp/"/>
+      <category term="cakephp" scheme="https://bravo-kernel.com/tags/cakephp/"/>
     
-      <category term="cakephp3" scheme="http://bravo-kernel.com/tags/cakephp3/"/>
+      <category term="cakephp3" scheme="https://bravo-kernel.com/tags/cakephp3/"/>
     
-      <category term="rest" scheme="http://bravo-kernel.com/tags/rest/"/>
+      <category term="rest" scheme="https://bravo-kernel.com/tags/rest/"/>
     
-      <category term="api" scheme="http://bravo-kernel.com/tags/api/"/>
+      <category term="api" scheme="https://bravo-kernel.com/tags/api/"/>
     
-      <category term="json api" scheme="http://bravo-kernel.com/tags/json-api/"/>
+      <category term="json api" scheme="https://bravo-kernel.com/tags/json-api/"/>
     
   </entry>
   
   <entry>
     <title>How to create responsive vertically aligned multiline radio button labels</title>
-    <link href="http://bravo-kernel.com/2017/01/how-to-create-responsive-vertically-aligned-mulitline-radio-button-labels/"/>
-    <id>http://bravo-kernel.com/2017/01/how-to-create-responsive-vertically-aligned-mulitline-radio-button-labels/</id>
+    <link href="https://bravo-kernel.com/2017/01/how-to-create-responsive-vertically-aligned-mulitline-radio-button-labels/"/>
+    <id>https://bravo-kernel.com/2017/01/how-to-create-responsive-vertically-aligned-mulitline-radio-button-labels/</id>
     <published>2017-01-28T09:22:56.000Z</published>
     <updated>2018-03-14T21:47:50.176Z</updated>
     
@@ -230,19 +230,19 @@ aligned  multiline labels (using either plain CSS or
     </summary>
     
     
-      <category term="css" scheme="http://bravo-kernel.com/categories/css/"/>
+      <category term="css" scheme="https://bravo-kernel.com/categories/css/"/>
     
     
-      <category term="css" scheme="http://bravo-kernel.com/tags/css/"/>
+      <category term="css" scheme="https://bravo-kernel.com/tags/css/"/>
     
-      <category term="foundation" scheme="http://bravo-kernel.com/tags/foundation/"/>
+      <category term="foundation" scheme="https://bravo-kernel.com/tags/foundation/"/>
     
   </entry>
   
   <entry>
     <title>How to install Watchman on Debian</title>
-    <link href="http://bravo-kernel.com/2016/11/how-to-install-watchman-on-debian/"/>
-    <id>http://bravo-kernel.com/2016/11/how-to-install-watchman-on-debian/</id>
+    <link href="https://bravo-kernel.com/2016/11/how-to-install-watchman-on-debian/"/>
+    <id>https://bravo-kernel.com/2016/11/how-to-install-watchman-on-debian/</id>
     <published>2016-11-22T11:54:38.000Z</published>
     <updated>2020-01-07T19:29:12.528Z</updated>
     
@@ -259,19 +259,19 @@ aligned  multiline labels (using either plain CSS or
     </summary>
     
     
-      <category term="Debian" scheme="http://bravo-kernel.com/categories/debian/"/>
+      <category term="Debian" scheme="https://bravo-kernel.com/categories/debian/"/>
     
     
-      <category term="debian" scheme="http://bravo-kernel.com/tags/debian/"/>
+      <category term="debian" scheme="https://bravo-kernel.com/tags/debian/"/>
     
-      <category term="ember" scheme="http://bravo-kernel.com/tags/ember/"/>
+      <category term="ember" scheme="https://bravo-kernel.com/tags/ember/"/>
     
   </entry>
   
   <entry>
     <title>Various solutions for solving the Elm Guide age exercise</title>
-    <link href="http://bravo-kernel.com/2016/06/various-solutions-for-solving-the-elm-guide-age-exercise/"/>
-    <id>http://bravo-kernel.com/2016/06/various-solutions-for-solving-the-elm-guide-age-exercise/</id>
+    <link href="https://bravo-kernel.com/2016/06/various-solutions-for-solving-the-elm-guide-age-exercise/"/>
+    <id>https://bravo-kernel.com/2016/06/various-solutions-for-solving-the-elm-guide-age-exercise/</id>
     <published>2016-06-18T20:06:53.000Z</published>
     <updated>2018-03-14T21:47:50.172Z</updated>
     
@@ -288,19 +288,19 @@ aligned  multiline labels (using either plain CSS or
     </summary>
     
     
-      <category term="elm" scheme="http://bravo-kernel.com/categories/elm/"/>
+      <category term="elm" scheme="https://bravo-kernel.com/categories/elm/"/>
     
     
-      <category term="elm" scheme="http://bravo-kernel.com/tags/elm/"/>
+      <category term="elm" scheme="https://bravo-kernel.com/tags/elm/"/>
     
-      <category term="elm-lang" scheme="http://bravo-kernel.com/tags/elm-lang/"/>
+      <category term="elm-lang" scheme="https://bravo-kernel.com/tags/elm-lang/"/>
     
   </entry>
   
   <entry>
     <title>Instant Nginx API key authentication for your CakePHP API</title>
-    <link href="http://bravo-kernel.com/2015/10/instant-nginx-api-key-authentication-for-your-cakephp-api/"/>
-    <id>http://bravo-kernel.com/2015/10/instant-nginx-api-key-authentication-for-your-cakephp-api/</id>
+    <link href="https://bravo-kernel.com/2015/10/instant-nginx-api-key-authentication-for-your-cakephp-api/"/>
+    <id>https://bravo-kernel.com/2015/10/instant-nginx-api-key-authentication-for-your-cakephp-api/</id>
     <published>2015-10-26T19:50:30.000Z</published>
     <updated>2018-03-14T21:47:50.170Z</updated>
     
@@ -317,23 +317,23 @@ aligned  multiline labels (using either plain CSS or
     </summary>
     
     
-      <category term="cakephp" scheme="http://bravo-kernel.com/categories/cakephp/"/>
+      <category term="cakephp" scheme="https://bravo-kernel.com/categories/cakephp/"/>
     
     
-      <category term="cakephp" scheme="http://bravo-kernel.com/tags/cakephp/"/>
+      <category term="cakephp" scheme="https://bravo-kernel.com/tags/cakephp/"/>
     
-      <category term="foc" scheme="http://bravo-kernel.com/tags/foc/"/>
+      <category term="foc" scheme="https://bravo-kernel.com/tags/foc/"/>
     
-      <category term="nginx" scheme="http://bravo-kernel.com/tags/nginx/"/>
+      <category term="nginx" scheme="https://bravo-kernel.com/tags/nginx/"/>
     
-      <category term="api" scheme="http://bravo-kernel.com/tags/api/"/>
+      <category term="api" scheme="https://bravo-kernel.com/tags/api/"/>
     
   </entry>
   
   <entry>
     <title>How to change the country used by the Windows 10 News Live Tile</title>
-    <link href="http://bravo-kernel.com/2015/10/how-to-change-the-country-used-by-the-windows-10-news-live-tile/"/>
-    <id>http://bravo-kernel.com/2015/10/how-to-change-the-country-used-by-the-windows-10-news-live-tile/</id>
+    <link href="https://bravo-kernel.com/2015/10/how-to-change-the-country-used-by-the-windows-10-news-live-tile/"/>
+    <id>https://bravo-kernel.com/2015/10/how-to-change-the-country-used-by-the-windows-10-news-live-tile/</id>
     <published>2015-10-17T12:11:49.000Z</published>
     <updated>2018-03-14T21:47:50.149Z</updated>
     
@@ -352,19 +352,19 @@ specific country.&lt;/p&gt;
     </summary>
     
     
-      <category term="Microsoft" scheme="http://bravo-kernel.com/categories/microsoft/"/>
+      <category term="Microsoft" scheme="https://bravo-kernel.com/categories/microsoft/"/>
     
     
-      <category term="microsoft" scheme="http://bravo-kernel.com/tags/microsoft/"/>
+      <category term="microsoft" scheme="https://bravo-kernel.com/tags/microsoft/"/>
     
-      <category term="windows10" scheme="http://bravo-kernel.com/tags/windows10/"/>
+      <category term="windows10" scheme="https://bravo-kernel.com/tags/windows10/"/>
     
   </entry>
   
   <entry>
     <title>Setting up Hexo on Windows</title>
-    <link href="http://bravo-kernel.com/2015/10/setting-up-hexo-on-windows/"/>
-    <id>http://bravo-kernel.com/2015/10/setting-up-hexo-on-windows/</id>
+    <link href="https://bravo-kernel.com/2015/10/setting-up-hexo-on-windows/"/>
+    <id>https://bravo-kernel.com/2015/10/setting-up-hexo-on-windows/</id>
     <published>2015-10-11T13:45:43.000Z</published>
     <updated>2020-01-07T19:42:17.182Z</updated>
     
@@ -381,19 +381,19 @@ specific country.&lt;/p&gt;
     </summary>
     
     
-      <category term="Web" scheme="http://bravo-kernel.com/categories/web/"/>
+      <category term="Web" scheme="https://bravo-kernel.com/categories/web/"/>
     
     
-      <category term="hexo" scheme="http://bravo-kernel.com/tags/hexo/"/>
+      <category term="hexo" scheme="https://bravo-kernel.com/tags/hexo/"/>
     
-      <category term="blog" scheme="http://bravo-kernel.com/tags/blog/"/>
+      <category term="blog" scheme="https://bravo-kernel.com/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>How to remove Add-ins from Office 2016</title>
-    <link href="http://bravo-kernel.com/2015/10/how-to-remove-add-ins-from-office-2016/"/>
-    <id>http://bravo-kernel.com/2015/10/how-to-remove-add-ins-from-office-2016/</id>
+    <link href="https://bravo-kernel.com/2015/10/how-to-remove-add-ins-from-office-2016/"/>
+    <id>https://bravo-kernel.com/2015/10/how-to-remove-add-ins-from-office-2016/</id>
     <published>2015-10-10T13:45:43.000Z</published>
     <updated>2018-03-14T21:47:50.132Z</updated>
     
@@ -413,19 +413,19 @@ specific country.&lt;/p&gt;
     </summary>
     
     
-      <category term="Microsoft" scheme="http://bravo-kernel.com/categories/microsoft/"/>
+      <category term="Microsoft" scheme="https://bravo-kernel.com/categories/microsoft/"/>
     
     
-      <category term="microsoft" scheme="http://bravo-kernel.com/tags/microsoft/"/>
+      <category term="microsoft" scheme="https://bravo-kernel.com/tags/microsoft/"/>
     
-      <category term="office" scheme="http://bravo-kernel.com/tags/office/"/>
+      <category term="office" scheme="https://bravo-kernel.com/tags/office/"/>
     
   </entry>
   
   <entry>
     <title>How to create Scheduled Tasks for Powershell on Windows Server 2012</title>
-    <link href="http://bravo-kernel.com/2015/09/how-to-create-scheduled-tasks-for-powershell-on-windows-server-2012/"/>
-    <id>http://bravo-kernel.com/2015/09/how-to-create-scheduled-tasks-for-powershell-on-windows-server-2012/</id>
+    <link href="https://bravo-kernel.com/2015/09/how-to-create-scheduled-tasks-for-powershell-on-windows-server-2012/"/>
+    <id>https://bravo-kernel.com/2015/09/how-to-create-scheduled-tasks-for-powershell-on-windows-server-2012/</id>
     <published>2015-09-21T16:45:43.000Z</published>
     <updated>2018-03-14T21:47:50.129Z</updated>
     
@@ -442,19 +442,19 @@ specific country.&lt;/p&gt;
     </summary>
     
     
-      <category term="Microsoft" scheme="http://bravo-kernel.com/categories/microsoft/"/>
+      <category term="Microsoft" scheme="https://bravo-kernel.com/categories/microsoft/"/>
     
     
-      <category term="microsoft" scheme="http://bravo-kernel.com/tags/microsoft/"/>
+      <category term="microsoft" scheme="https://bravo-kernel.com/tags/microsoft/"/>
     
-      <category term="server-2012" scheme="http://bravo-kernel.com/tags/server-2012/"/>
+      <category term="server-2012" scheme="https://bravo-kernel.com/tags/server-2012/"/>
     
   </entry>
   
   <entry>
     <title>Handige Minecraft weetjes (Dutch)</title>
-    <link href="http://bravo-kernel.com/2015/06/minecraft-tips-and-tricks-dutch/"/>
-    <id>http://bravo-kernel.com/2015/06/minecraft-tips-and-tricks-dutch/</id>
+    <link href="https://bravo-kernel.com/2015/06/minecraft-tips-and-tricks-dutch/"/>
+    <id>https://bravo-kernel.com/2015/06/minecraft-tips-and-tricks-dutch/</id>
     <published>2015-06-27T08:38:10.000Z</published>
     <updated>2018-03-14T21:47:50.128Z</updated>
     
@@ -471,19 +471,19 @@ specific country.&lt;/p&gt;
     </summary>
     
     
-      <category term="Minecraft" scheme="http://bravo-kernel.com/categories/minecraft/"/>
+      <category term="Minecraft" scheme="https://bravo-kernel.com/categories/minecraft/"/>
     
     
-      <category term="minecraft" scheme="http://bravo-kernel.com/tags/minecraft/"/>
+      <category term="minecraft" scheme="https://bravo-kernel.com/tags/minecraft/"/>
     
-      <category term="dutch" scheme="http://bravo-kernel.com/tags/dutch/"/>
+      <category term="dutch" scheme="https://bravo-kernel.com/tags/dutch/"/>
     
   </entry>
   
   <entry>
     <title>How to add JWT Authentication to a CakePHP 3 REST API</title>
-    <link href="http://bravo-kernel.com/2015/04/how-to-add-jwt-authentication-to-a-cakephp-3-rest-api/"/>
-    <id>http://bravo-kernel.com/2015/04/how-to-add-jwt-authentication-to-a-cakephp-3-rest-api/</id>
+    <link href="https://bravo-kernel.com/2015/04/how-to-add-jwt-authentication-to-a-cakephp-3-rest-api/"/>
+    <id>https://bravo-kernel.com/2015/04/how-to-add-jwt-authentication-to-a-cakephp-3-rest-api/</id>
     <published>2015-04-20T05:22:32.000Z</published>
     <updated>2018-03-14T21:47:50.104Z</updated>
     
@@ -501,27 +501,27 @@ we wi
     </summary>
     
     
-      <category term="CakePHP" scheme="http://bravo-kernel.com/categories/cakephp/"/>
+      <category term="CakePHP" scheme="https://bravo-kernel.com/categories/cakephp/"/>
     
     
-      <category term="security" scheme="http://bravo-kernel.com/tags/security/"/>
+      <category term="security" scheme="https://bravo-kernel.com/tags/security/"/>
     
-      <category term="cakephp" scheme="http://bravo-kernel.com/tags/cakephp/"/>
+      <category term="cakephp" scheme="https://bravo-kernel.com/tags/cakephp/"/>
     
-      <category term="cakephp3" scheme="http://bravo-kernel.com/tags/cakephp3/"/>
+      <category term="cakephp3" scheme="https://bravo-kernel.com/tags/cakephp3/"/>
     
-      <category term="rest" scheme="http://bravo-kernel.com/tags/rest/"/>
+      <category term="rest" scheme="https://bravo-kernel.com/tags/rest/"/>
     
-      <category term="api" scheme="http://bravo-kernel.com/tags/api/"/>
+      <category term="api" scheme="https://bravo-kernel.com/tags/api/"/>
     
-      <category term="jwt" scheme="http://bravo-kernel.com/tags/jwt/"/>
+      <category term="jwt" scheme="https://bravo-kernel.com/tags/jwt/"/>
     
   </entry>
   
   <entry>
     <title>How to prefix route a CAKEPHP 3 REST API</title>
-    <link href="http://bravo-kernel.com/2015/04/how-to-prefix-route-a-cakephp-3-rest-api/"/>
-    <id>http://bravo-kernel.com/2015/04/how-to-prefix-route-a-cakephp-3-rest-api/</id>
+    <link href="https://bravo-kernel.com/2015/04/how-to-prefix-route-a-cakephp-3-rest-api/"/>
+    <id>https://bravo-kernel.com/2015/04/how-to-prefix-route-a-cakephp-3-rest-api/</id>
     <published>2015-04-15T07:47:38.000Z</published>
     <updated>2018-03-14T21:47:50.096Z</updated>
     
@@ -540,23 +540,23 @@ we will implement a
     </summary>
     
     
-      <category term="CakePHP" scheme="http://bravo-kernel.com/categories/cakephp/"/>
+      <category term="CakePHP" scheme="https://bravo-kernel.com/categories/cakephp/"/>
     
     
-      <category term="cakephp" scheme="http://bravo-kernel.com/tags/cakephp/"/>
+      <category term="cakephp" scheme="https://bravo-kernel.com/tags/cakephp/"/>
     
-      <category term="cakephp3" scheme="http://bravo-kernel.com/tags/cakephp3/"/>
+      <category term="cakephp3" scheme="https://bravo-kernel.com/tags/cakephp3/"/>
     
-      <category term="rest" scheme="http://bravo-kernel.com/tags/rest/"/>
+      <category term="rest" scheme="https://bravo-kernel.com/tags/rest/"/>
     
-      <category term="api" scheme="http://bravo-kernel.com/tags/api/"/>
+      <category term="api" scheme="https://bravo-kernel.com/tags/api/"/>
     
   </entry>
   
   <entry>
     <title>How to use a CakePHP 3 REST API</title>
-    <link href="http://bravo-kernel.com/2015/04/how-to-use-a-cakephp-3-rest-api/"/>
-    <id>http://bravo-kernel.com/2015/04/how-to-use-a-cakephp-3-rest-api/</id>
+    <link href="https://bravo-kernel.com/2015/04/how-to-use-a-cakephp-3-rest-api/"/>
+    <id>https://bravo-kernel.com/2015/04/how-to-use-a-cakephp-3-rest-api/</id>
     <published>2015-04-12T11:10:24.000Z</published>
     <updated>2018-03-14T21:47:50.080Z</updated>
     
@@ -573,23 +573,23 @@ we will implement a
     </summary>
     
     
-      <category term="CakePHP" scheme="http://bravo-kernel.com/categories/cakephp/"/>
+      <category term="CakePHP" scheme="https://bravo-kernel.com/categories/cakephp/"/>
     
     
-      <category term="cakephp" scheme="http://bravo-kernel.com/tags/cakephp/"/>
+      <category term="cakephp" scheme="https://bravo-kernel.com/tags/cakephp/"/>
     
-      <category term="cakephp3" scheme="http://bravo-kernel.com/tags/cakephp3/"/>
+      <category term="cakephp3" scheme="https://bravo-kernel.com/tags/cakephp3/"/>
     
-      <category term="rest" scheme="http://bravo-kernel.com/tags/rest/"/>
+      <category term="rest" scheme="https://bravo-kernel.com/tags/rest/"/>
     
-      <category term="api" scheme="http://bravo-kernel.com/tags/api/"/>
+      <category term="api" scheme="https://bravo-kernel.com/tags/api/"/>
     
   </entry>
   
   <entry>
     <title>How to build a CakePHP 3 REST API in minutes</title>
-    <link href="http://bravo-kernel.com/2015/04/how-to-build-a-cakephp-3-rest-api-in-minutes/"/>
-    <id>http://bravo-kernel.com/2015/04/how-to-build-a-cakephp-3-rest-api-in-minutes/</id>
+    <link href="https://bravo-kernel.com/2015/04/how-to-build-a-cakephp-3-rest-api-in-minutes/"/>
+    <id>https://bravo-kernel.com/2015/04/how-to-build-a-cakephp-3-rest-api-in-minutes/</id>
     <published>2015-04-12T09:22:21.000Z</published>
     <updated>2018-03-23T16:56:54.632Z</updated>
     
@@ -606,23 +606,23 @@ we will implement a
     </summary>
     
     
-      <category term="CakePHP" scheme="http://bravo-kernel.com/categories/cakephp/"/>
+      <category term="CakePHP" scheme="https://bravo-kernel.com/categories/cakephp/"/>
     
     
-      <category term="cakephp" scheme="http://bravo-kernel.com/tags/cakephp/"/>
+      <category term="cakephp" scheme="https://bravo-kernel.com/tags/cakephp/"/>
     
-      <category term="cakephp3" scheme="http://bravo-kernel.com/tags/cakephp3/"/>
+      <category term="cakephp3" scheme="https://bravo-kernel.com/tags/cakephp3/"/>
     
-      <category term="rest" scheme="http://bravo-kernel.com/tags/rest/"/>
+      <category term="rest" scheme="https://bravo-kernel.com/tags/rest/"/>
     
-      <category term="api" scheme="http://bravo-kernel.com/tags/api/"/>
+      <category term="api" scheme="https://bravo-kernel.com/tags/api/"/>
     
   </entry>
   
   <entry>
     <title>Creating proper Github releases</title>
-    <link href="http://bravo-kernel.com/2015/03/creating-proper-github-releases/"/>
-    <id>http://bravo-kernel.com/2015/03/creating-proper-github-releases/</id>
+    <link href="https://bravo-kernel.com/2015/03/creating-proper-github-releases/"/>
+    <id>https://bravo-kernel.com/2015/03/creating-proper-github-releases/</id>
     <published>2015-03-27T18:30:00.000Z</published>
     <updated>2018-03-14T21:47:50.077Z</updated>
     
@@ -642,12 +642,12 @@ we will implement a
     </summary>
     
     
-      <category term="Git" scheme="http://bravo-kernel.com/categories/git/"/>
+      <category term="Git" scheme="https://bravo-kernel.com/categories/git/"/>
     
     
-      <category term="git" scheme="http://bravo-kernel.com/tags/git/"/>
+      <category term="git" scheme="https://bravo-kernel.com/tags/git/"/>
     
-      <category term="github" scheme="http://bravo-kernel.com/tags/github/"/>
+      <category term="github" scheme="https://bravo-kernel.com/tags/github/"/>
     
   </entry>
   
