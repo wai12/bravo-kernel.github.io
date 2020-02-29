@@ -12,7 +12,7 @@ language: en
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://bravo-kernel.com
+url: https://bravo-kernel.com
 root: /
 permalink: :year/:month/:title/
 tag_dir: tags
